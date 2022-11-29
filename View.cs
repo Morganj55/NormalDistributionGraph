@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace NormalDistributionGraph
 {
-    public partial class View : Form
+    public partial class View : Form, IView
     {
+        
+
         public View()
         {
             InitializeComponent();
+        }
 
-   
+        //Properties and Events 
+        public event CancelEventHandler ValidatingTextBox;
+        public event EventHandler ValidatedTextBox;
+
+        public Panel _probabilityPanel
+        {
+            get { return ProbabilityPanel; }
+            set { ProbabilityPanel = value; }
         }
 
         private void View_Load(object sender, EventArgs e)
@@ -29,5 +39,17 @@ namespace NormalDistributionGraph
             TextBoxErrorProvider.Add(textBoxB1, errorProviderB1);
             TextBoxErrorProvider.Add(textBoxB2, errorProviderB2);
         }
+
+        public void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatingTextBox?.Invoke(sender, e);
+        }
+
+        public void textBox_Validated(object sender, EventArgs e)
+        {
+            ValidatedTextBox?.Invoke(sender, EventArgs.Empty);
+        }
+
+
     }
 }

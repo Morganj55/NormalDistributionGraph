@@ -251,6 +251,8 @@ namespace NormalDistributionGraph
             this.textBoxMean.Name = "textBoxMean";
             this.textBoxMean.Size = new System.Drawing.Size(110, 20);
             this.textBoxMean.TabIndex = 19;
+            this.textBoxMean.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxMean.Validated += new System.EventHandler(this.textBox_Validated);
             // 
             // lblMean
             // 
