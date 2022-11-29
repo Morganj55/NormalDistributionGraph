@@ -1,7 +1,7 @@
 ﻿
 namespace NormalDistributionGraph
 {
-    partial class Form1
+    partial class View
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,12 @@ namespace NormalDistributionGraph
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblValid = new System.Windows.Forms.Label();
-            this.ProbPanel = new System.Windows.Forms.Panel();
+            this.ProbabilityPanel = new System.Windows.Forms.Panel();
+            this.lblPA_X_BCalculation = new System.Windows.Forms.Label();
+            this.lblPXBCalculation = new System.Windows.Forms.Label();
+            this.lblPXACalculation = new System.Windows.Forms.Label();
             this.textBoxB2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPXB = new System.Windows.Forms.Label();
@@ -47,10 +51,19 @@ namespace NormalDistributionGraph
             this.textBoxStdDev = new System.Windows.Forms.TextBox();
             this.textBoxMean = new System.Windows.Forms.TextBox();
             this.lblMean = new System.Windows.Forms.Label();
-            this.lblPXACalculation = new System.Windows.Forms.Label();
-            this.lblPXBCalculation = new System.Windows.Forms.Label();
-            this.lblPA_X_BCalculation = new System.Windows.Forms.Label();
-            this.ProbPanel.SuspendLayout();
+            this.errorProviderMean = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderStdDev = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderA1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderA2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderB1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderB2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ProbabilityPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderA1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderA2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderB1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderB2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblValid
@@ -61,27 +74,55 @@ namespace NormalDistributionGraph
             this.lblValid.Size = new System.Drawing.Size(0, 13);
             this.lblValid.TabIndex = 24;
             // 
-            // ProbPanel
+            // ProbabilityPanel
             // 
-            this.ProbPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ProbPanel.Controls.Add(this.lblPA_X_BCalculation);
-            this.ProbPanel.Controls.Add(this.lblPXBCalculation);
-            this.ProbPanel.Controls.Add(this.lblPXACalculation);
-            this.ProbPanel.Controls.Add(this.textBoxB2);
-            this.ProbPanel.Controls.Add(this.label7);
-            this.ProbPanel.Controls.Add(this.lblPXB);
-            this.ProbPanel.Controls.Add(this.lblB2);
-            this.ProbPanel.Controls.Add(this.lblPXA);
-            this.ProbPanel.Controls.Add(this.textBoxB1);
-            this.ProbPanel.Controls.Add(this.textBoxA2);
-            this.ProbPanel.Controls.Add(this.textBoxA1);
-            this.ProbPanel.Controls.Add(this.lblB1);
-            this.ProbPanel.Controls.Add(this.lblA2);
-            this.ProbPanel.Controls.Add(this.lblA1);
-            this.ProbPanel.Location = new System.Drawing.Point(396, 12);
-            this.ProbPanel.Name = "ProbPanel";
-            this.ProbPanel.Size = new System.Drawing.Size(753, 146);
-            this.ProbPanel.TabIndex = 23;
+            this.ProbabilityPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ProbabilityPanel.Controls.Add(this.lblPA_X_BCalculation);
+            this.ProbabilityPanel.Controls.Add(this.lblPXBCalculation);
+            this.ProbabilityPanel.Controls.Add(this.lblPXACalculation);
+            this.ProbabilityPanel.Controls.Add(this.textBoxB2);
+            this.ProbabilityPanel.Controls.Add(this.label7);
+            this.ProbabilityPanel.Controls.Add(this.lblPXB);
+            this.ProbabilityPanel.Controls.Add(this.lblB2);
+            this.ProbabilityPanel.Controls.Add(this.lblPXA);
+            this.ProbabilityPanel.Controls.Add(this.textBoxB1);
+            this.ProbabilityPanel.Controls.Add(this.textBoxA2);
+            this.ProbabilityPanel.Controls.Add(this.textBoxA1);
+            this.ProbabilityPanel.Controls.Add(this.lblB1);
+            this.ProbabilityPanel.Controls.Add(this.lblA2);
+            this.ProbabilityPanel.Controls.Add(this.lblA1);
+            this.ProbabilityPanel.Enabled = false;
+            this.ProbabilityPanel.Location = new System.Drawing.Point(396, 12);
+            this.ProbabilityPanel.Name = "ProbabilityPanel";
+            this.ProbabilityPanel.Size = new System.Drawing.Size(753, 146);
+            this.ProbabilityPanel.TabIndex = 23;
+            // 
+            // lblPA_X_BCalculation
+            // 
+            this.lblPA_X_BCalculation.AutoSize = true;
+            this.lblPA_X_BCalculation.Location = new System.Drawing.Point(614, 66);
+            this.lblPA_X_BCalculation.Name = "lblPA_X_BCalculation";
+            this.lblPA_X_BCalculation.Size = new System.Drawing.Size(109, 13);
+            this.lblPA_X_BCalculation.TabIndex = 19;
+            this.lblPA_X_BCalculation.Text = "lblPA_X_BCalculation";
+            // 
+            // lblPXBCalculation
+            // 
+            this.lblPXBCalculation.AutoSize = true;
+            this.lblPXBCalculation.Location = new System.Drawing.Point(389, 106);
+            this.lblPXBCalculation.Name = "lblPXBCalculation";
+            this.lblPXBCalculation.Size = new System.Drawing.Size(90, 13);
+            this.lblPXBCalculation.TabIndex = 18;
+            this.lblPXBCalculation.Text = "lblPXBCalculation";
+            // 
+            // lblPXACalculation
+            // 
+            this.lblPXACalculation.AutoSize = true;
+            this.lblPXACalculation.Location = new System.Drawing.Point(399, 23);
+            this.lblPXACalculation.Name = "lblPXACalculation";
+            this.lblPXACalculation.Size = new System.Drawing.Size(90, 13);
+            this.lblPXACalculation.TabIndex = 17;
+            this.lblPXACalculation.Text = "lblPXACalculation";
             // 
             // textBoxB2
             // 
@@ -177,6 +218,7 @@ namespace NormalDistributionGraph
             // btnGenNormDist
             // 
             this.btnGenNormDist.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnGenNormDist.Enabled = false;
             this.btnGenNormDist.Location = new System.Drawing.Point(67, 118);
             this.btnGenNormDist.Name = "btnGenNormDist";
             this.btnGenNormDist.Size = new System.Drawing.Size(281, 23);
@@ -220,49 +262,53 @@ namespace NormalDistributionGraph
             this.lblMean.TabIndex = 18;
             this.lblMean.Text = "Mean: ";
             // 
-            // lblPXACalculation
+            // errorProviderMean
             // 
-            this.lblPXACalculation.AutoSize = true;
-            this.lblPXACalculation.Location = new System.Drawing.Point(399, 23);
-            this.lblPXACalculation.Name = "lblPXACalculation";
-            this.lblPXACalculation.Size = new System.Drawing.Size(90, 13);
-            this.lblPXACalculation.TabIndex = 17;
-            this.lblPXACalculation.Text = "lblPXACalculation";
+            this.errorProviderMean.ContainerControl = this;
             // 
-            // lblPXBCalculation
+            // errorProviderStdDev
             // 
-            this.lblPXBCalculation.AutoSize = true;
-            this.lblPXBCalculation.Location = new System.Drawing.Point(389, 106);
-            this.lblPXBCalculation.Name = "lblPXBCalculation";
-            this.lblPXBCalculation.Size = new System.Drawing.Size(90, 13);
-            this.lblPXBCalculation.TabIndex = 18;
-            this.lblPXBCalculation.Text = "lblPXBCalculation";
+            this.errorProviderStdDev.ContainerControl = this;
             // 
-            // lblPA_X_BCalculation
+            // errorProviderA1
             // 
-            this.lblPA_X_BCalculation.AutoSize = true;
-            this.lblPA_X_BCalculation.Location = new System.Drawing.Point(614, 66);
-            this.lblPA_X_BCalculation.Name = "lblPA_X_BCalculation";
-            this.lblPA_X_BCalculation.Size = new System.Drawing.Size(109, 13);
-            this.lblPA_X_BCalculation.TabIndex = 19;
-            this.lblPA_X_BCalculation.Text = "lblPA_X_BCalculation";
+            this.errorProviderA1.ContainerControl = this;
             // 
-            // Form1
+            // errorProviderA2
+            // 
+            this.errorProviderA2.ContainerControl = this;
+            // 
+            // errorProviderB1
+            // 
+            this.errorProviderB1.ContainerControl = this;
+            // 
+            // errorProviderB2
+            // 
+            this.errorProviderB2.ContainerControl = this;
+            // 
+            // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 798);
             this.Controls.Add(this.lblValid);
-            this.Controls.Add(this.ProbPanel);
+            this.Controls.Add(this.ProbabilityPanel);
             this.Controls.Add(this.btnGenNormDist);
             this.Controls.Add(this.lblStdDev);
             this.Controls.Add(this.textBoxStdDev);
             this.Controls.Add(this.textBoxMean);
             this.Controls.Add(this.lblMean);
-            this.Name = "Form1";
+            this.Name = "View";
             this.Text = "Form1";
-            this.ProbPanel.ResumeLayout(false);
-            this.ProbPanel.PerformLayout();
+            this.Load += new System.EventHandler(this.View_Load);
+            this.ProbabilityPanel.ResumeLayout(false);
+            this.ProbabilityPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderA1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderA2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderB1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderB2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +317,7 @@ namespace NormalDistributionGraph
         #endregion
 
         private System.Windows.Forms.Label lblValid;
-        private System.Windows.Forms.Panel ProbPanel;
+        private System.Windows.Forms.Panel ProbabilityPanel;
         private System.Windows.Forms.Label lblPA_X_BCalculation;
         private System.Windows.Forms.Label lblPXBCalculation;
         private System.Windows.Forms.Label lblPXACalculation;
@@ -291,6 +337,12 @@ namespace NormalDistributionGraph
         private System.Windows.Forms.TextBox textBoxStdDev;
         private System.Windows.Forms.TextBox textBoxMean;
         private System.Windows.Forms.Label lblMean;
+        private System.Windows.Forms.ErrorProvider errorProviderMean;
+        private System.Windows.Forms.ErrorProvider errorProviderStdDev;
+        private System.Windows.Forms.ErrorProvider errorProviderA1;
+        private System.Windows.Forms.ErrorProvider errorProviderA2;
+        private System.Windows.Forms.ErrorProvider errorProviderB1;
+        private System.Windows.Forms.ErrorProvider errorProviderB2;
     }
 }
 
