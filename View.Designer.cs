@@ -57,6 +57,7 @@ namespace NormalDistributionGraph
             this.errorProviderA2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.curve1 = new NormalDistributionGraph.Curve();
             this.ProbabilityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).BeginInit();
@@ -227,7 +228,7 @@ namespace NormalDistributionGraph
             // 
             this.btnGenNormDist.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnGenNormDist.Enabled = false;
-            this.btnGenNormDist.Location = new System.Drawing.Point(67, 118);
+            this.btnGenNormDist.Location = new System.Drawing.Point(83, 137);
             this.btnGenNormDist.Name = "btnGenNormDist";
             this.btnGenNormDist.Size = new System.Drawing.Size(281, 23);
             this.btnGenNormDist.TabIndex = 21;
@@ -238,7 +239,7 @@ namespace NormalDistributionGraph
             // 
             this.lblStdDev.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblStdDev.AutoSize = true;
-            this.lblStdDev.Location = new System.Drawing.Point(79, 86);
+            this.lblStdDev.Location = new System.Drawing.Point(95, 105);
             this.lblStdDev.Name = "lblStdDev";
             this.lblStdDev.Size = new System.Drawing.Size(126, 16);
             this.lblStdDev.TabIndex = 22;
@@ -247,7 +248,7 @@ namespace NormalDistributionGraph
             // textBoxStdDev
             // 
             this.textBoxStdDev.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxStdDev.Location = new System.Drawing.Point(183, 82);
+            this.textBoxStdDev.Location = new System.Drawing.Point(199, 101);
             this.textBoxStdDev.Name = "textBoxStdDev";
             this.textBoxStdDev.Size = new System.Drawing.Size(110, 22);
             this.textBoxStdDev.TabIndex = 20;
@@ -257,7 +258,7 @@ namespace NormalDistributionGraph
             // textBoxMean
             // 
             this.textBoxMean.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxMean.Location = new System.Drawing.Point(183, 43);
+            this.textBoxMean.Location = new System.Drawing.Point(199, 62);
             this.textBoxMean.Name = "textBoxMean";
             this.textBoxMean.Size = new System.Drawing.Size(110, 22);
             this.textBoxMean.TabIndex = 19;
@@ -268,7 +269,7 @@ namespace NormalDistributionGraph
             // 
             this.lblMean.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMean.AutoSize = true;
-            this.lblMean.Location = new System.Drawing.Point(136, 47);
+            this.lblMean.Location = new System.Drawing.Point(152, 66);
             this.lblMean.Name = "lblMean";
             this.lblMean.Size = new System.Drawing.Size(48, 16);
             this.lblMean.TabIndex = 18;
@@ -298,11 +299,20 @@ namespace NormalDistributionGraph
             // 
             this.errorProviderB2.ContainerControl = this;
             // 
+            // curve1
+            // 
+            this.curve1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.curve1.Location = new System.Drawing.Point(83, 202);
+            this.curve1.Name = "curve1";
+            this.curve1.Size = new System.Drawing.Size(1066, 507);
+            this.curve1.TabIndex = 25;
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 798);
+            this.ClientSize = new System.Drawing.Size(1269, 837);
+            this.Controls.Add(this.curve1);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);
             this.Controls.Add(this.btnGenNormDist);
@@ -355,6 +365,7 @@ namespace NormalDistributionGraph
         private System.Windows.Forms.ErrorProvider errorProviderA2;
         private System.Windows.Forms.ErrorProvider errorProviderB1;
         private System.Windows.Forms.ErrorProvider errorProviderB2;
+        private Curve curve1;
     }
 }
 
