@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Curve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curve.Designer.cs">
+      <DependentUpon>Curve.cs</DependentUpon>
+    </Compile>
     <Compile Include="IModel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="ModelUpdate.cs" />
@@ -60,6 +66,9 @@
     <Compile Include="IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Curve.resx">
+      <DependentUpon>Curve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
