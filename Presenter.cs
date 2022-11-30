@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,35 +9,68 @@ using System.Windows.Forms;
 
 namespace NormalDistributionGraph
 {
-    public class Presenter
+    public class Presenter : IObserver<ModelUpdate>
     {
-        private readonly IView _View;
+        private readonly IView _view;
+        private readonly IModel _model;
+        private readonly IDisposable _ModelUnsubscriber;
 
         public Presenter(IView view)
         {
-            this._View = view;
-            _View.ValidatingTextBox += Validating;
-            _View.ValidatedTextBox += Validated;
+            this._view = view;
+            _view.ValidatingTextBox += Validating;
+            _view.ValidatedTextBox += Validated;
+            Model model = new Model();
+            _model = model;
+            _ModelUnsubscriber = model.Subscribe(this);
+            Debug.Assert(_ModelUnsubscriber != null, "Subscribing to model must return an unsubscriber");
         }
 
-        //Event Hnadlers
+        //Event Handlers
         private void Validating(object sender, CancelEventArgs e)
         {
-            if (!IsTextBoxTextValid((sender as TextBox).Text))
+            TextBox clickedTextBox = (sender as TextBox);
+            if (!IsTextBoxTextValid(clickedTextBox.Text))
             {
-                NotValidText((sender as TextBox), _View.TextBoxErrorProvider, e);
+                NotValidText(clickedTextBox, _view.TextBoxErrorProvider, e);
+                UpdateModelInvalidState(clickedTextBox);
+                _model.UpdateProbabiltyPanelAndDistributionButton();
             }
+
         }
 
         private void Validated(object sender, EventArgs e)
         {
-            if (IsTextBoxTextValid((sender as TextBox).Text))
+            TextBox clickedTextBox = (sender as TextBox);
+            if (IsTextBoxTextValid(clickedTextBox.Text))
             {
-                ValidText(((sender as TextBox).Text), (sender as TextBox), _View.TextBoxErrorProvider);
+                ValidText((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                UpdateModelValidState(clickedTextBox);
+                _model.UpdateProbabiltyPanelAndDistributionButton();
             }
         }
 
-        //Methods 
+        //IObserverable methods 
+        public void OnNext(ModelUpdate update)
+        {
+            _view._probabilityPanel.Enabled = update._enableProbPanelDistBtn;
+            _view._btnGenNormDistribution.Enabled = update._enableProbPanelDistBtn;
+
+        }
+
+        public void OnError(Exception error)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnCompleted()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+        //Validation Methods 
         public bool IsTextBoxTextValid(string textBoxText)
         {
             if (textBoxText.Length > 0)
@@ -66,7 +100,6 @@ namespace NormalDistributionGraph
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "Please enter a valid number");
         }
 
-
         public void ValidText(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
         {
             float inputNum = float.Parse(textBoxText);
@@ -75,6 +108,7 @@ namespace NormalDistributionGraph
             clickedTextBox.Text = textBoxText;
         }
 
+        //Updating Model Methods 
         public void UpdateModelValidState(TextBox clickedTextBox)
         {
             switch (clickedTextBox.Name)
@@ -82,7 +116,7 @@ namespace NormalDistributionGraph
                 case "textBoxMean":
                     {
                         //meanValue = currentTextBoxString;
-                        _model.MeanValidated = true;
+                        _model.meanValidated = true;
                         break;
                     }
                 case "textBoxStdDev":
@@ -101,13 +135,11 @@ namespace NormalDistributionGraph
             {
                 case "textBoxMean":
                     {
-                        //meanValue = currentTextBoxString;
-                        _model.MeanValidated = false;
+                        _model.meanValidated = false;
                         break;
                     }
                 case "textBoxStdDev":
                     {
-                        //stdDev = currentTextBoxString;
                         _model.stdDevValidated = false;
                         break;
                     }
@@ -115,6 +147,8 @@ namespace NormalDistributionGraph
                     break;
             }
         }
+
+        
 
     }
 }

@@ -13,6 +13,7 @@ namespace NormalDistributionGraph
         event CancelEventHandler ValidatingTextBox;
         event EventHandler ValidatedTextBox;
         Panel _probabilityPanel { get; set; }
+        Button _btnGenNormDistribution { get; set; }
         Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
 
     }
