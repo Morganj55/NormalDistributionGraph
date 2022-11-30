@@ -33,6 +33,11 @@ namespace NormalDistributionGraph
             get { return ProbabilityPanel; }
             set { ProbabilityPanel = value; }
         }
+        public Button _btnGenNormDistribution
+        {
+            get { return btnGenNormDist; }
+            set { btnGenNormDist = value; }
+        }
 
 
         public void View_Load(object sender, EventArgs e)

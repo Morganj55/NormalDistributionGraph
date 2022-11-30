@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace NormalDistributionGraph
 {
-    class ModelUpdate
+    public class ModelUpdate
     {
+
+        public ModelUpdate(bool enableProbPanelDistBtn)
+        {
+            _enableProbPanelDistBtn = enableProbPanelDistBtn;
+        }
+
+        public bool _enableProbPanelDistBtn { get; set; }
+        
     }
 }
