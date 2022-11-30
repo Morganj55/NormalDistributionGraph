@@ -17,11 +17,16 @@ namespace NormalDistributionGraph
         public View()
         {
             InitializeComponent();
+            presenter = new Presenter(this);
         }
+
+        //References 
+        private readonly Presenter presenter;
 
         //Properties and Events 
         public event CancelEventHandler ValidatingTextBox;
         public event EventHandler ValidatedTextBox;
+        public Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
 
         public Panel _probabilityPanel
         {
@@ -29,15 +34,17 @@ namespace NormalDistributionGraph
             set { ProbabilityPanel = value; }
         }
 
-        private void View_Load(object sender, EventArgs e)
+
+        public void View_Load(object sender, EventArgs e)
         {
-            Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider = new Dictionary<TextBox, ErrorProvider>();
+            TextBoxErrorProvider = new Dictionary<TextBox, ErrorProvider>();
             TextBoxErrorProvider.Add(textBoxMean, errorProviderMean);
             TextBoxErrorProvider.Add(textBoxStdDev, errorProviderStdDev);
             TextBoxErrorProvider.Add(textBoxA1, errorProviderA1);
             TextBoxErrorProvider.Add(textBoxA2, errorProviderA2);
             TextBoxErrorProvider.Add(textBoxB1, errorProviderB1);
             TextBoxErrorProvider.Add(textBoxB2, errorProviderB2);
+            
         }
 
         public void textBox_Validating(object sender, CancelEventArgs e)
