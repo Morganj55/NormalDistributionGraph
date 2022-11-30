@@ -59,23 +59,62 @@ namespace NormalDistributionGraph
             }
         }
 
-        public void NotValidText(TextBox whichTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
+        public void NotValidText(TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
         {
             e.Cancel = true;
-            whichTextBox.Select(0, whichTextBox.Text.Length);
-            textBoxErrorProvider[whichTextBox].SetError(whichTextBox, "Please enter a valid number");
+            clickedTextBox.Select(0, clickedTextBox.Text.Length);
+            textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "Please enter a valid number");
         }
 
 
-        public void ValidText(string textBoxText, TextBox whichTextBox, Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider)
+        public void ValidText(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
         {
-            float textBoxStringToFloat = float.Parse(textBoxText);
-            TextBoxErrorProvider[whichTextBox].SetError(whichTextBox, "");
-            textBoxText = textBoxStringToFloat.ToString("0.000");
-            whichTextBox.Text = textBoxText;
+            float inputNum = float.Parse(textBoxText);
+            textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
+            textBoxText = inputNum.ToString("0.000");
+            clickedTextBox.Text = textBoxText;
         }
 
-
+        public void UpdateModelValidState(TextBox clickedTextBox)
+        {
+            switch (clickedTextBox.Name)
+            {
+                case "textBoxMean":
+                    {
+                        //meanValue = currentTextBoxString;
+                        _model.MeanValidated = true;
+                        break;
+                    }
+                case "textBoxStdDev":
+                    {
+                        //stdDev = currentTextBoxString;
+                        _model.stdDevValidated = true;
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+        public void UpdateModelInvalidState(TextBox clickedTextBox)
+        {
+            switch (clickedTextBox.Name)
+            {
+                case "textBoxMean":
+                    {
+                        //meanValue = currentTextBoxString;
+                        _model.MeanValidated = false;
+                        break;
+                    }
+                case "textBoxStdDev":
+                    {
+                        //stdDev = currentTextBoxString;
+                        _model.stdDevValidated = false;
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
 
     }
 }
