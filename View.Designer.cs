@@ -72,7 +72,7 @@ namespace NormalDistributionGraph
             this.lblValid.AutoSize = true;
             this.lblValid.Location = new System.Drawing.Point(183, 66);
             this.lblValid.Name = "lblValid";
-            this.lblValid.Size = new System.Drawing.Size(0, 16);
+            this.lblValid.Size = new System.Drawing.Size(0, 13);
             this.lblValid.TabIndex = 24;
             // 
             // ProbabilityPanel
@@ -103,7 +103,7 @@ namespace NormalDistributionGraph
             this.lblPA_X_BCalculation.AutoSize = true;
             this.lblPA_X_BCalculation.Location = new System.Drawing.Point(614, 66);
             this.lblPA_X_BCalculation.Name = "lblPA_X_BCalculation";
-            this.lblPA_X_BCalculation.Size = new System.Drawing.Size(137, 16);
+            this.lblPA_X_BCalculation.Size = new System.Drawing.Size(109, 13);
             this.lblPA_X_BCalculation.TabIndex = 19;
             this.lblPA_X_BCalculation.Text = "lblPA_X_BCalculation";
             // 
@@ -112,7 +112,7 @@ namespace NormalDistributionGraph
             this.lblPXBCalculation.AutoSize = true;
             this.lblPXBCalculation.Location = new System.Drawing.Point(389, 106);
             this.lblPXBCalculation.Name = "lblPXBCalculation";
-            this.lblPXBCalculation.Size = new System.Drawing.Size(114, 16);
+            this.lblPXBCalculation.Size = new System.Drawing.Size(90, 13);
             this.lblPXBCalculation.TabIndex = 18;
             this.lblPXBCalculation.Text = "lblPXBCalculation";
             // 
@@ -121,7 +121,7 @@ namespace NormalDistributionGraph
             this.lblPXACalculation.AutoSize = true;
             this.lblPXACalculation.Location = new System.Drawing.Point(399, 23);
             this.lblPXACalculation.Name = "lblPXACalculation";
-            this.lblPXACalculation.Size = new System.Drawing.Size(114, 16);
+            this.lblPXACalculation.Size = new System.Drawing.Size(90, 13);
             this.lblPXACalculation.TabIndex = 17;
             this.lblPXACalculation.Text = "lblPXACalculation";
             // 
@@ -129,7 +129,7 @@ namespace NormalDistributionGraph
             // 
             this.textBoxB2.Location = new System.Drawing.Point(324, 62);
             this.textBoxB2.Name = "textBoxB2";
-            this.textBoxB2.Size = new System.Drawing.Size(100, 22);
+            this.textBoxB2.Size = new System.Drawing.Size(100, 20);
             this.textBoxB2.TabIndex = 16;
             this.textBoxB2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxB2.Validated += new System.EventHandler(this.textBox_Validated);
@@ -139,7 +139,7 @@ namespace NormalDistributionGraph
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(510, 66);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 16);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Probability (A<x<B):";
             // 
@@ -148,7 +148,7 @@ namespace NormalDistributionGraph
             this.lblPXB.AutoSize = true;
             this.lblPXB.Location = new System.Drawing.Point(301, 106);
             this.lblPXB.Name = "lblPXB";
-            this.lblPXB.Size = new System.Drawing.Size(108, 16);
+            this.lblPXB.Size = new System.Drawing.Size(85, 13);
             this.lblPXB.TabIndex = 14;
             this.lblPXB.Text = "Probability (x>B):";
             // 
@@ -157,7 +157,7 @@ namespace NormalDistributionGraph
             this.lblB2.AutoSize = true;
             this.lblB2.Location = new System.Drawing.Point(301, 65);
             this.lblB2.Name = "lblB2";
-            this.lblB2.Size = new System.Drawing.Size(20, 16);
+            this.lblB2.Size = new System.Drawing.Size(17, 13);
             this.lblB2.TabIndex = 13;
             this.lblB2.Text = "B:";
             // 
@@ -166,7 +166,7 @@ namespace NormalDistributionGraph
             this.lblPXA.AutoSize = true;
             this.lblPXA.Location = new System.Drawing.Point(301, 24);
             this.lblPXA.Name = "lblPXA";
-            this.lblPXA.Size = new System.Drawing.Size(114, 16);
+            this.lblPXA.Size = new System.Drawing.Size(91, 13);
             this.lblPXA.TabIndex = 12;
             this.lblPXA.Text = "Probability (x < A):";
             // 
@@ -174,7 +174,7 @@ namespace NormalDistributionGraph
             // 
             this.textBoxB1.Location = new System.Drawing.Point(74, 103);
             this.textBoxB1.Name = "textBoxB1";
-            this.textBoxB1.Size = new System.Drawing.Size(100, 22);
+            this.textBoxB1.Size = new System.Drawing.Size(100, 20);
             this.textBoxB1.TabIndex = 6;
             this.textBoxB1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxB1.Validated += new System.EventHandler(this.textBox_Validated);
@@ -183,7 +183,7 @@ namespace NormalDistributionGraph
             // 
             this.textBoxA2.Location = new System.Drawing.Point(74, 63);
             this.textBoxA2.Name = "textBoxA2";
-            this.textBoxA2.Size = new System.Drawing.Size(100, 22);
+            this.textBoxA2.Size = new System.Drawing.Size(100, 20);
             this.textBoxA2.TabIndex = 5;
             this.textBoxA2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxA2.Validated += new System.EventHandler(this.textBox_Validated);
@@ -192,7 +192,7 @@ namespace NormalDistributionGraph
             // 
             this.textBoxA1.Location = new System.Drawing.Point(74, 23);
             this.textBoxA1.Name = "textBoxA1";
-            this.textBoxA1.Size = new System.Drawing.Size(100, 22);
+            this.textBoxA1.Size = new System.Drawing.Size(100, 20);
             this.textBoxA1.TabIndex = 4;
             this.textBoxA1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxA1.Validated += new System.EventHandler(this.textBox_Validated);
@@ -202,7 +202,7 @@ namespace NormalDistributionGraph
             this.lblB1.AutoSize = true;
             this.lblB1.Location = new System.Drawing.Point(27, 106);
             this.lblB1.Name = "lblB1";
-            this.lblB1.Size = new System.Drawing.Size(20, 16);
+            this.lblB1.Size = new System.Drawing.Size(17, 13);
             this.lblB1.TabIndex = 8;
             this.lblB1.Text = "B:";
             // 
@@ -211,7 +211,7 @@ namespace NormalDistributionGraph
             this.lblA2.AutoSize = true;
             this.lblA2.Location = new System.Drawing.Point(27, 66);
             this.lblA2.Name = "lblA2";
-            this.lblA2.Size = new System.Drawing.Size(20, 16);
+            this.lblA2.Size = new System.Drawing.Size(17, 13);
             this.lblA2.TabIndex = 7;
             this.lblA2.Text = "A:";
             // 
@@ -220,7 +220,7 @@ namespace NormalDistributionGraph
             this.lblA1.AutoSize = true;
             this.lblA1.Location = new System.Drawing.Point(27, 26);
             this.lblA1.Name = "lblA1";
-            this.lblA1.Size = new System.Drawing.Size(20, 16);
+            this.lblA1.Size = new System.Drawing.Size(17, 13);
             this.lblA1.TabIndex = 6;
             this.lblA1.Text = "A:";
             // 
@@ -241,7 +241,7 @@ namespace NormalDistributionGraph
             this.lblStdDev.AutoSize = true;
             this.lblStdDev.Location = new System.Drawing.Point(95, 105);
             this.lblStdDev.Name = "lblStdDev";
-            this.lblStdDev.Size = new System.Drawing.Size(126, 16);
+            this.lblStdDev.Size = new System.Drawing.Size(101, 13);
             this.lblStdDev.TabIndex = 22;
             this.lblStdDev.Text = "Standard Deviation:";
             // 
@@ -250,7 +250,7 @@ namespace NormalDistributionGraph
             this.textBoxStdDev.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxStdDev.Location = new System.Drawing.Point(199, 101);
             this.textBoxStdDev.Name = "textBoxStdDev";
-            this.textBoxStdDev.Size = new System.Drawing.Size(110, 22);
+            this.textBoxStdDev.Size = new System.Drawing.Size(110, 20);
             this.textBoxStdDev.TabIndex = 20;
             this.textBoxStdDev.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxStdDev.Validated += new System.EventHandler(this.textBox_Validated);
@@ -260,7 +260,7 @@ namespace NormalDistributionGraph
             this.textBoxMean.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxMean.Location = new System.Drawing.Point(199, 62);
             this.textBoxMean.Name = "textBoxMean";
-            this.textBoxMean.Size = new System.Drawing.Size(110, 22);
+            this.textBoxMean.Size = new System.Drawing.Size(110, 20);
             this.textBoxMean.TabIndex = 19;
             this.textBoxMean.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxMean.Validated += new System.EventHandler(this.textBox_Validated);
@@ -271,7 +271,7 @@ namespace NormalDistributionGraph
             this.lblMean.AutoSize = true;
             this.lblMean.Location = new System.Drawing.Point(152, 66);
             this.lblMean.Name = "lblMean";
-            this.lblMean.Size = new System.Drawing.Size(48, 16);
+            this.lblMean.Size = new System.Drawing.Size(40, 13);
             this.lblMean.TabIndex = 18;
             this.lblMean.Text = "Mean: ";
             // 
@@ -304,7 +304,7 @@ namespace NormalDistributionGraph
             this.curve1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.curve1.Location = new System.Drawing.Point(83, 202);
             this.curve1.Name = "curve1";
-            this.curve1.Size = new System.Drawing.Size(1066, 507);
+            this.curve1.Size = new System.Drawing.Size(1066, 514);
             this.curve1.TabIndex = 25;
             // 
             // View
