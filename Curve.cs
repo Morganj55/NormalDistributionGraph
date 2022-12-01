@@ -15,24 +15,32 @@ namespace NormalDistributionGraph
         public Curve()
         {
             InitializeComponent();
-            mean = 0.000f;
+            mean = 100.000f;
             standardDeviation = 1.000f;
             FirstXCoordinate(mean,standardDeviation);
             ConsecutiveXCoordinates();
             CreateYCoordinates();
+            AddXandYToPointArray();
+            
         }
 
-        List<Point> GraphPoints;
+        
         List<float> XValues = new List<float>();
         List<float> YValues = new List<float>();
+        PointF[] XYPointArray = new PointF[200];
+
+
+
+        
+        List<float> GraphXValues = new List<float>();
+        List<float> GraphYValues = new List<float>();
+        PointF[] GraphXYArray = new PointF[200];
+
         float standardDeviation;
         float mean;
         float firstXCoordinate;
 
-        //public void SetPoints(List<float>xValues, float[]YValues)
-        //{
 
-        //}
 
         public void FirstXCoordinate(float mean, float stdDev)
         {
@@ -79,6 +87,53 @@ namespace NormalDistributionGraph
             return x;
         }
 
+        public void AddXandYToPointArray()
+        {
+            for (int i = 0; i < XValues.Count; i++)
+            {
+                XYPointArray[i] = new PointF(XValues[i], YValues[i]);
+            }
+        }
+
+        public void CreateGraphXCoordinates(Rectangle rectangle, Point startingPoint)
+        {
+            GraphXValues.Add(startingPoint.X);
+            float currentValue = startingPoint.X;
+            float previousValue;
+            float increment = (rectangle.Width / XValues.Count); // 6 is used because that covers the full range of -3 SD to +3SD, 199 is used because I want 200 x coordinates and I have already added one into the list
+            for (int i = 0; i < 199; i++)
+            {
+                float nextXValue = currentValue + increment;
+                GraphXValues.Add(nextXValue);
+                previousValue = currentValue;
+                currentValue = nextXValue;
+            }
+
+        }
+
+        public void CreateGraphYCoordinates(Rectangle rectangle, Point startingPoint)
+        {
+            GraphYValues.Add(startingPoint.Y);
+            
+            for (int i = 0; i < XValues.Count - 1; i++)
+            {
+                float currentValue = startingPoint.Y;
+                float nextYValue = currentValue - (YValues[i] * (rectangle.Height * 2.25f));
+                GraphYValues.Add(nextYValue);
+
+            }
+        }
+
+        public void GraphAddXandYToPointArray()
+        {
+            for (int i = 0; i < XValues.Count; i++)
+            {
+                GraphXYArray[i] = new PointF(GraphXValues[i], GraphYValues[i]);
+            }
+        }
+
+
+
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -89,8 +144,8 @@ namespace NormalDistributionGraph
                 ClientRectangle.Top + Margin.Top + Padding.Top,
                 ClientRectangle.Width - (Margin.Left + Margin.Right) - (Padding.Left + Padding.Right),
                 ClientRectangle.Height - (Margin.Top + Margin.Bottom) - (Padding.Top + Padding.Bottom));
-            
-            e.Graphics.FillRectangle(graphBackgroundBrush, ClientRectangle);           
+
+            e.Graphics.FillRectangle(graphBackgroundBrush, ClientRectangle);
             // Used ClientRectangle which fills whole Panel, can also use rectGraph that John provided, may need to use johns for the resising purpose.
 
             graphBackgroundBrush.Dispose();
@@ -100,9 +155,19 @@ namespace NormalDistributionGraph
             Point pBottomLeft = new Point(rectGraph.Left, rectGraph.Bottom);
             Point pBottomRight = new Point(rectGraph.Right, rectGraph.Bottom);
 
+            CreateGraphXCoordinates(rectGraph, pBottomLeft);
+            CreateGraphYCoordinates(rectGraph, pBottomLeft);
+            GraphAddXandYToPointArray();
+
+
             Pen pen = new Pen(Color.Blue, 4);
             
-            e.Graphics.DrawLine(pen, pBottomLeft, pTopRight);
+            e.Graphics.DrawLines(pen, GraphXYArray);
+            //for (int i = 0; i < XValues.Count; i++)
+            //    {
+            //    e.Graphics.DrawLine(pen,XValues[i],YValues[i],XValues[i+1] );
+
+            //    }
             pen.Dispose();
             //Brush brush = new SolidBrush(Color.White);
             //e.Graphics.DrawString("This is a custom control", Font, brush, new Point(ClientRectangle.Left + Margin.Left + Padding.Left, ClientRectangle.Top + Margin.Top + Padding.Top));
