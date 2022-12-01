@@ -302,9 +302,9 @@ namespace NormalDistributionGraph
             // curve1
             // 
             this.curve1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.curve1.Location = new System.Drawing.Point(83, 202);
+            this.curve1.Location = new System.Drawing.Point(106, 183);
             this.curve1.Name = "curve1";
-            this.curve1.Size = new System.Drawing.Size(1066, 514);
+            this.curve1.Size = new System.Drawing.Size(1013, 514);
             this.curve1.TabIndex = 25;
             // 
             // View
