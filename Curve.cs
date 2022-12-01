@@ -15,49 +15,30 @@ namespace NormalDistributionGraph
         public Curve()
         {
             InitializeComponent();
-            mean = 20.000f;
-            standardDeviation = 1.000f;
-            FirstXCoordinate(mean,standardDeviation);
-            ConsecutiveXCoordinates();
-            CreateYCoordinates();
-            AddXandYToPointArray();
-            
         }
 
         
         List<float> XValues = new List<float>();
         List<float> YValues = new List<float>();
-        PointF[] XYPointArray = new PointF[200];
-
-
-
-        
         List<float> GraphXValues = new List<float>();
         List<float> GraphYValues = new List<float>();
         PointF[] GraphXYArray = new PointF[200];
 
-        float standardDeviation;
-        float mean;
-        float firstXCoordinate;
+        float standardDeviation= 1.000f;
+        float mean = 20.000f;
 
 
-
-        public void FirstXCoordinate(float mean, float stdDev)
+        public void CreateXCoordinates(float mean, float stdDev)
         {
-            firstXCoordinate = mean - (3.00f * standardDeviation);
-        }
-
-        public void ConsecutiveXCoordinates()
-        {
+            
+            float firstXCoordinate = mean - (3.00f * stdDev);
             XValues.Add(firstXCoordinate);
             float currentValue = firstXCoordinate;
-            float previousValue;
             float increment = (6.00f * standardDeviation) / 199; // 6 is used because that covers the full range of -3 SD to +3SD, 199 is used because I want 200 x coordinates and I have already added one into the list
             for (int i = 0; i < 199; i++)
             {
                 float nextXValue = currentValue + increment;     
                 XValues.Add(nextXValue);
-                previousValue = currentValue;
                 currentValue = nextXValue;
             }
         }
@@ -68,44 +49,47 @@ namespace NormalDistributionGraph
             {
                 float y = GaussianAlgorithm(mean, standardDeviation, XValues[i]);
                 YValues.Add(y);
-                
             }
         }
 
         public float GaussianAlgorithm(float mean, float stdDev, float xValue)
         {
-            float x;
-            x =
-                (
-                (1f / (float)Math.Sqrt(2 * (float)Math.PI * (float)Math.Pow(stdDev, 2)))
-                *
-                ((float)Math.Pow((float)Math.E,
-                (-1f * ((float)Math.Pow(xValue - mean, 2f)) / (2 * ((float)Math.Pow(stdDev, 2f)))))
-                )
-                );
-              
-            return x;
-        }
+            //Overall equation 
+            // (1/a) * e^(b/c)
+            // a = SQRT(2*Pi*stdDev^2)
+            // b = -1 * (x - mean)^2
+            // c = 2 * stdDev^2
 
-        public void AddXandYToPointArray()
-        {
-            for (int i = 0; i < XValues.Count; i++)
-            {
-                XYPointArray[i] = new PointF(XValues[i], YValues[i]);
-            }
+            float a = ((float)Math.Sqrt(2 * (float)Math.PI * (float)Math.Pow(stdDev, 2)));
+            float b = -1f * ((float)Math.Pow(xValue - mean, 2f));
+            float c = (2 * ((float)Math.Pow(stdDev, 2f)));
+            float y = (1 / a) * ((float)Math.Pow((float)Math.E, b / c));
+            return y;
+
+            //Old implementation of algorithm
+            //float x;
+            //x =
+            //    (
+            //    (1f / (float)Math.Sqrt(2 * (float)Math.PI * (float)Math.Pow(stdDev, 2)))
+            //    *
+            //    ((float)Math.Pow((float)Math.E,
+            //    (-1f * ((float)Math.Pow(xValue - mean, 2f)) / (2 * ((float)Math.Pow(stdDev, 2f)))))
+            //    )
+            //    );
+            //return x;
+
+
         }
 
         public void CreateGraphXCoordinates(Rectangle rectangle, Point startingPoint)
         {
             GraphXValues.Add(startingPoint.X);
             float currentValue = startingPoint.X;
-            float previousValue;
             float increment = (rectangle.Width / XValues.Count); // 6 is used because that covers the full range of -3 SD to +3SD, 199 is used because I want 200 x coordinates and I have already added one into the list
             for (int i = 0; i < 199; i++)
             {
                 float nextXValue = currentValue + increment;
                 GraphXValues.Add(nextXValue);
-                previousValue = currentValue;
                 currentValue = nextXValue;
             }
 
@@ -118,9 +102,8 @@ namespace NormalDistributionGraph
             for (int i = 0; i < XValues.Count - 1; i++)
             {
                 float currentValue = startingPoint.Y;
-                float nextYValue = currentValue - (YValues[i] * (rectangle.Height * 2.25f));
+                float nextYValue = currentValue - (YValues[i] * (rectangle.Height * 2.25f)); // 2.25f is used so that the curve takes up more space, could use any number
                 GraphYValues.Add(nextYValue);
-
             }
         }
 
@@ -132,11 +115,19 @@ namespace NormalDistributionGraph
             }
         }
 
-
+        public void Reset()
+        {
+            XValues = new List<float>();
+            YValues = new List<float>();
+            GraphXValues = new List<float>();
+            GraphYValues = new List<float>();
+            GraphXYArray = new PointF[200];
+        }
 
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            
             base.OnPaint(e);
             // Fill the background of the working area of the control in solid black
             Brush graphBackgroundBrush = new SolidBrush(Color.White);
@@ -144,19 +135,20 @@ namespace NormalDistributionGraph
                 ClientRectangle.Top + Margin.Top + Padding.Top,
                 ClientRectangle.Width - (Margin.Left + Margin.Right) - (Padding.Left + Padding.Right),
                 ClientRectangle.Height - (Margin.Top + Margin.Bottom) - (Padding.Top + Padding.Bottom));
-            // Used ClientRectangle which fills whole Panel, can also use rectGraph that John provided, may need to use johns for the resising purpose.
-            e.Graphics.FillRectangle(graphBackgroundBrush, ClientRectangle);
+            
+            e.Graphics.FillRectangle(graphBackgroundBrush, rectGraph);
             graphBackgroundBrush.Dispose();
-
             
             Point pBottomLeft = new Point(rectGraph.Left, rectGraph.Bottom);
-           
 
+            CreateXCoordinates(mean, standardDeviation);
+            CreateYCoordinates();
             CreateGraphXCoordinates(rectGraph, pBottomLeft);
             CreateGraphYCoordinates(rectGraph, pBottomLeft);
             GraphAddXandYToPointArray();
 
             //Coloured Standard deviation Lines 
+            //
 
             int meanIndex = GraphXValues.Count / 2;
             PointF meanTop = new PointF(GraphXValues[meanIndex], GraphYValues[meanIndex]);
@@ -167,7 +159,7 @@ namespace NormalDistributionGraph
             int negativeSD2TopIndex = 33;
             int positiveSD1TopIndex = 133;
             int positiveSD2TopIndex = 166;
-
+            // Indexs of the 1st and 2nd SD both positive and negative based on the total number of x values which is 200.
 
             PointF negativeSD1Top = new PointF((GraphXValues[negativeSD1TopIndex]), GraphYValues[negativeSD1TopIndex]);
             PointF negativeSD1Bottom = new PointF((GraphXValues[negativeSD1TopIndex]), pBottomLeft.Y);
@@ -193,8 +185,11 @@ namespace NormalDistributionGraph
             e.Graphics.DrawLine(penRed, negativeSD2Top, negativeSD2Bottom);
             e.Graphics.DrawLine(penRed, positiveSD2Top, positiveSD2Bottom);
             pen.Dispose();
+            penOrange.Dispose();
+            penGreen.Dispose();
+            penRed.Dispose();
 
-            
+            Reset();
             //Brush brush = new SolidBrush(Color.White);
             //e.Graphics.DrawString("This is a custom control", Font, brush, new Point(ClientRectangle.Left + Margin.Left + Padding.Left, ClientRectangle.Top + Margin.Top + Padding.Top));
             //brush.Dispose();
