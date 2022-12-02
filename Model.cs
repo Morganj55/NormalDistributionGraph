@@ -11,6 +11,12 @@ namespace NormalDistributionGraph
         public bool meanValidated { get; set; }
         public bool stdDevValidated { get; set; }
         public bool enableProbPanelDistBtn { get; set; }
+        public float mean { get; set; }
+        public float stdDev { get; set; }
+        public float A1 { get; set; }
+        public float A2 { get; set; }
+        public float B1 { get; set; }
+        public float B2 { get; set; }
         private List<IObserver<ModelUpdate>> _observers;
         public Model()
         {

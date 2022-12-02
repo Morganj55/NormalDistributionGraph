@@ -47,6 +47,7 @@ namespace NormalDistributionGraph
             {
                 ValidText((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
+                UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
         }
@@ -112,6 +113,13 @@ namespace NormalDistributionGraph
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
             textBoxText = inputNum.ToString("0.000");
             clickedTextBox.Text = textBoxText;
+            
+        }
+        public float ParseTextBoxText(TextBox clickedTextBox)
+        {
+            float inputNum = float.Parse(clickedTextBox.Text);
+             string textBoxText = inputNum.ToString("0.000");
+            return float.Parse(textBoxText);
         }
 
         //Updating Model Methods 
@@ -154,6 +162,32 @@ namespace NormalDistributionGraph
             }
         }
 
+        public void UpdateModelInputNumbers(TextBox clickedTextBox)
+        {
+            switch (clickedTextBox.Name)
+            {
+                case "textBoxMean":
+                    _model.mean = ParseTextBoxText(clickedTextBox);
+                    break;
+                case "textBoxStdDev":
+                    _model.stdDev = ParseTextBoxText(clickedTextBox);
+                    break;
+                case "textBoxA1":
+                    _model.A1 = ParseTextBoxText(clickedTextBox);
+                    break;
+                case "textBoxA2":
+                    _model.A2 = ParseTextBoxText(clickedTextBox);
+                    break;
+                case "textBoxB1":
+                    _model.B1 = ParseTextBoxText(clickedTextBox);
+                    break;
+                case "textBoxB2":
+                    _model.B2 = ParseTextBoxText(clickedTextBox);
+                    break;
+                default:
+                    break;
+            }
+        }
         
 
     }
