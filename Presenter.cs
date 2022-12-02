@@ -20,6 +20,7 @@ namespace NormalDistributionGraph
             this._view = view;
             _view.ValidatingTextBox += Validating;
             _view.ValidatedTextBox += Validated;
+            _view.GenerateNormalDistribution += GenerateNormalDistribution;
             Model model = new Model();
             _model = model;
             _ModelUnsubscriber = model.Subscribe(this);
@@ -48,6 +49,11 @@ namespace NormalDistributionGraph
                 UpdateModelValidState(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
+        }
+
+        private void GenerateNormalDistribution(object sender, EventArgs e)
+        {
+
         }
 
         //IObserverable methods 

@@ -234,6 +234,7 @@ namespace NormalDistributionGraph
             this.btnGenNormDist.TabIndex = 21;
             this.btnGenNormDist.Text = "Generate Normal Distribution";
             this.btnGenNormDist.UseVisualStyleBackColor = true;
+            this.btnGenNormDist.Click += new System.EventHandler(this.btnGenNormDist_Click);
             // 
             // lblStdDev
             // 
