@@ -159,7 +159,7 @@ namespace NormalDistributionGraph
             int negativeSD2TopIndex = 33;
             int positiveSD1TopIndex = 133;
             int positiveSD2TopIndex = 166;
-            // Indexs of the 1st and 2nd SD both positive and negative based on the total number of x values which is 200.
+            // Indexs of the 1st and 2nd SD, both positive and negative, based on the total number of x values which is 200.
 
             PointF negativeSD1Top = new PointF((GraphXValues[negativeSD1TopIndex]), GraphYValues[negativeSD1TopIndex]);
             PointF negativeSD1Bottom = new PointF((GraphXValues[negativeSD1TopIndex]), pBottomLeft.Y);

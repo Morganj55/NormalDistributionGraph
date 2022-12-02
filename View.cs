@@ -26,6 +26,7 @@ namespace NormalDistributionGraph
         //Properties and Events 
         public event CancelEventHandler ValidatingTextBox;
         public event EventHandler ValidatedTextBox;
+        public event EventHandler GenerateNormalDistribution;
         public Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
 
         public Panel _probabilityPanel
@@ -62,6 +63,9 @@ namespace NormalDistributionGraph
             ValidatedTextBox?.Invoke(sender, EventArgs.Empty);
         }
 
-
+        private void btnGenNormDist_Click(object sender, EventArgs e)
+        {
+            GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
+        }
     }
 }
