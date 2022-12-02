@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NormalDistributionGraph
 {
-    public partial class Curve : UserControl
+    public partial class Curve : UserControl, ICurve
     {
         public Curve()
         {
@@ -23,6 +23,9 @@ namespace NormalDistributionGraph
         List<float> GraphXValues = new List<float>();
         List<float> GraphYValues = new List<float>();
         PointF[] GraphXYArray = new PointF[200];
+
+       public Rectangle rectangleArea { get; set; }
+       public PointF startingPoint { get; set; }
 
         float standardDeviation= 1.000f;
         float mean = 20.000f;
@@ -127,7 +130,6 @@ namespace NormalDistributionGraph
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            
             base.OnPaint(e);
             // Fill the background of the working area of the control in solid black
             Brush graphBackgroundBrush = new SolidBrush(Color.White);
@@ -135,12 +137,12 @@ namespace NormalDistributionGraph
                 ClientRectangle.Top + Margin.Top + Padding.Top,
                 ClientRectangle.Width - (Margin.Left + Margin.Right) - (Padding.Left + Padding.Right),
                 ClientRectangle.Height - (Margin.Top + Margin.Bottom) - (Padding.Top + Padding.Bottom));
-            
+            rectangleArea = rectGraph;
             e.Graphics.FillRectangle(graphBackgroundBrush, rectGraph);
             graphBackgroundBrush.Dispose();
             
             Point pBottomLeft = new Point(rectGraph.Left, rectGraph.Bottom);
-
+            startingPoint = pBottomLeft;
             CreateXCoordinates(mean, standardDeviation);
             CreateYCoordinates();
             CreateGraphXCoordinates(rectGraph, pBottomLeft);
@@ -178,7 +180,10 @@ namespace NormalDistributionGraph
             Pen penGreen = new Pen(Color.Green, 4);
             Pen penRed = new Pen(Color.Red, 4);
 
-            e.Graphics.DrawLines(pen, GraphXYArray);
+
+            e.Graphics.DrawLines(pen, GraphXYArray); // draws curve 
+
+            //draws sd lines 
             e.Graphics.DrawLine(penOrange, meanTop, meanBottom);
             e.Graphics.DrawLine(penGreen, negativeSD1Top, negativeSD1Bottom);
             e.Graphics.DrawLine(penGreen, positiveSD1Top, positiveSD1Bottom);

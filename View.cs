@@ -28,6 +28,7 @@ namespace NormalDistributionGraph
         public event EventHandler ValidatedTextBox;
         public event EventHandler GenerateNormalDistribution;
         public Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
+ 
 
         public Panel _probabilityPanel
         {
@@ -38,6 +39,16 @@ namespace NormalDistributionGraph
         {
             get { return btnGenNormDist; }
             set { btnGenNormDist = value; }
+        }
+
+        public Rectangle _rectangleArea
+        {
+            get { return customCurve.rectangleArea; }
+        }
+
+        public PointF _startingPoint
+        {
+            get { return customCurve.startingPoint; }
         }
 
 

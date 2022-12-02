@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace NormalDistributionGraph
         float A2 { get; set; }
         float B1 { get; set; }
         float B2 { get; set; }
-
+        Rectangle rectangle { get; set; }
+        PointF startingPoint{ get; set; }
 
         void UpdateProbabiltyPanelAndDistributionButton();
 

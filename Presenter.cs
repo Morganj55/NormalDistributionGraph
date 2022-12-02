@@ -54,7 +54,7 @@ namespace NormalDistributionGraph
 
         private void GenerateNormalDistribution(object sender, EventArgs e)
         {
-
+            SetCustomControlProperteis();
         }
 
         //IObserverable methods 
@@ -99,14 +99,12 @@ namespace NormalDistributionGraph
                 return false;
             }
         }
-
         public void NotValidText(TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
         {
             e.Cancel = true;
             clickedTextBox.Select(0, clickedTextBox.Text.Length);
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "Please enter a valid number");
         }
-
         public void ValidText(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
         {
             float inputNum = float.Parse(textBoxText);
@@ -161,7 +159,6 @@ namespace NormalDistributionGraph
                     break;
             }
         }
-
         public void UpdateModelInputNumbers(TextBox clickedTextBox)
         {
             switch (clickedTextBox.Name)
@@ -188,7 +185,11 @@ namespace NormalDistributionGraph
                     break;
             }
         }
-        
+        public void SetCustomControlProperteis()
+        {
+            _model.startingPoint = _view._startingPoint;
+            _model.rectangle = _view._rectangleArea;
+        }
 
     }
 }

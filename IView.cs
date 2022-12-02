@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace NormalDistributionGraph
         Panel _probabilityPanel { get; set; }
         Button _btnGenNormDistribution { get; set; }
         Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
+        Rectangle _rectangleArea { get;  }
+        PointF _startingPoint { get; }
 
     }
 }
