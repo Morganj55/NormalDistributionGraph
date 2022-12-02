@@ -150,7 +150,7 @@ namespace NormalDistributionGraph
                 currentValue = nextXValue;
             }
 
-        } // Going to need to know rectancle and the starting point 
+        } 
         public void CreateGraphYCoordinates(Rectangle rectangle, PointF startingPoint)
         {
             GraphYValues.Add(startingPoint.Y);
