@@ -70,6 +70,7 @@ namespace NormalDistributionGraph
 
         public PointF[] GenerateSDLines()
         {
+            CreateSDLinePoints();
             return GraphSDLines;
         }
 
@@ -175,7 +176,7 @@ namespace NormalDistributionGraph
             GraphXValues = new List<float>();
             GraphYValues = new List<float>();
             GraphXYArray = new PointF[200];
-            GraphSDLines = new PointF[9];
+            GraphSDLines = new PointF[10];
         }
 
 

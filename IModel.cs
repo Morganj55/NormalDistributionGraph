@@ -22,6 +22,9 @@ namespace NormalDistributionGraph
         PointF startingPoint{ get; set; }
 
         void UpdateProbabiltyPanelAndDistributionButton();
+        PointF[] GenerateCurve();
+        PointF[] GenerateSDLines();
 
+        void Reset();
     }
 }

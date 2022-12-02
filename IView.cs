@@ -20,5 +20,8 @@ namespace NormalDistributionGraph
         Rectangle _rectangleArea { get;  }
         PointF _startingPoint { get; }
 
+        PointF[] _graphXYArray { set; }
+        PointF[] _graphSDLines { set; }
+        void PaintCurve();
     }
 }
