@@ -57,7 +57,7 @@ namespace NormalDistributionGraph
             this.errorProviderA2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.curve1 = new NormalDistributionGraph.Curve();
+            this.customCurve = new NormalDistributionGraph.Curve();
             this.ProbabilityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).BeginInit();
@@ -300,20 +300,20 @@ namespace NormalDistributionGraph
             // 
             this.errorProviderB2.ContainerControl = this;
             // 
-            // curve1
+            // customCurve
             // 
-            this.curve1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.curve1.Location = new System.Drawing.Point(106, 183);
-            this.curve1.Name = "curve1";
-            this.curve1.Size = new System.Drawing.Size(1013, 514);
-            this.curve1.TabIndex = 25;
+            this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customCurve.Location = new System.Drawing.Point(106, 183);
+            this.customCurve.Name = "customCurve";
+            this.customCurve.Size = new System.Drawing.Size(1013, 514);
+            this.customCurve.TabIndex = 25;
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 837);
-            this.Controls.Add(this.curve1);
+            this.Controls.Add(this.customCurve);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);
             this.Controls.Add(this.btnGenNormDist);
@@ -366,7 +366,7 @@ namespace NormalDistributionGraph
         private System.Windows.Forms.ErrorProvider errorProviderA2;
         private System.Windows.Forms.ErrorProvider errorProviderB1;
         private System.Windows.Forms.ErrorProvider errorProviderB2;
-        private Curve curve1;
+        private Curve customCurve;
     }
 }
 

@@ -52,6 +52,7 @@
     <Compile Include="Curve.Designer.cs">
       <DependentUpon>Curve.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICurve.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="ModelUpdate.cs" />
