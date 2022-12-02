@@ -55,6 +55,10 @@ namespace NormalDistributionGraph
         private void GenerateNormalDistribution(object sender, EventArgs e)
         {
             SetCustomControlProperteis();
+            _view._graphXYArray = _model.GenerateCurve();
+            _view._graphSDLines = _model.GenerateSDLines();
+            _view.PaintCurve();
+            _model.Reset();
         }
 
         //IObserverable methods 

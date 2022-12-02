@@ -51,6 +51,14 @@ namespace NormalDistributionGraph
             get { return customCurve.startingPoint; }
         }
 
+        public PointF[] _graphXYArray
+        {
+            set { customCurve.graphXYArray = value; }
+        }
+        public PointF[] _graphSDLines
+        {
+            set { customCurve.graphSDLines = value; }
+        }
 
         public void View_Load(object sender, EventArgs e)
         {
@@ -77,6 +85,11 @@ namespace NormalDistributionGraph
         private void btnGenNormDist_Click(object sender, EventArgs e)
         {
             GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
+        }
+
+        public void PaintCurve()
+        {
+            customCurve.Invalidate();
         }
     }
 }

@@ -11,5 +11,7 @@ namespace NormalDistributionGraph
     {
         Rectangle rectangleArea { get; set; }
         PointF startingPoint { get; set; }
+        PointF[] graphXYArray { get; set; }
+        PointF[] graphSDLines { get; set; }
     }
 }
