@@ -175,6 +175,9 @@ namespace NormalDistributionGraph
                     break;
                 case "textBoxA1":
                     _model.A1 = ParseTextBoxText(clickedTextBox);
+                    //_model.CalcutlateZScore(_model.A1);
+                    //_model.PXACalculation();
+                    //_view._lblPXACalculation.Text = _model.xLessThanP.ToString();
                     break;
                 case "textBoxA2":
                     _model.A2 = ParseTextBoxText(clickedTextBox);
