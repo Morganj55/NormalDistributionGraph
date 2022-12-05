@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NormalDistributionGraph
 {
     class Model : IModel
-    {       
+    {
         //View properties
         public bool meanValidated { get; set; }
         public bool stdDevValidated { get; set; }
@@ -20,6 +20,7 @@ namespace NormalDistributionGraph
         public float B1 { get; set; }
         public float B2 { get; set; }
         private List<IObserver<ModelUpdate>> _observers;
+        public float zScore {get;set;}
         public Model()
         {
             _observers = new List<IObserver<ModelUpdate>>();
@@ -67,7 +68,6 @@ namespace NormalDistributionGraph
             GraphAddXandYToPointArray();
             return GraphXYArray;
         }
-
         public PointF[] GenerateSDLines()
         {
             CreateSDLinePoints();
@@ -215,6 +215,29 @@ namespace NormalDistributionGraph
             GraphSDLines[8] = positiveSD2Top;
             GraphSDLines[9] = positiveSD2Bottom;
 
+        }
+
+
+
+        //Probability calculations --------------------------
+        public void CalcutlateZScore(float inputNum)
+        {
+            zScore = (A1 - mean) / stdDev;
+        }
+
+        public float IntegralBoundryCalculation(float boundries)
+        {
+            float a = ((float)Math.Sqrt(2 * (float)Math.PI)); 
+            float b = ((float)Math.Pow((float)Math.E, -0.5f * (float)Math.Pow(boundries,2f)));
+            return a * b;
+        }
+
+        public float XLessThanP(float boundries)
+        {
+            float upperLimit = IntegralBoundryCalculation(zScore);
+            float lowerLimit = IntegralBoundryCalculation(100f);
+
+            return upperLimit - lowerLimit;
         }
 
     }
