@@ -4,10 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathNet.Numerics;
 
 namespace NormalDistributionGraph
 {
-    class Model : IModel
+    public class Model : IModel
     {
         //View properties
         public bool meanValidated { get; set; }
@@ -16,10 +17,11 @@ namespace NormalDistributionGraph
         public float mean { get; set; }
         public float stdDev { get; set; }
         public float A1 { get; set; }
+        public float xLessThanP { get; set; }
         public float A2 { get; set; }
         public float B1 { get; set; }
         public float B2 { get; set; }
-        private List<IObserver<ModelUpdate>> _observers;
+        public List<IObserver<ModelUpdate>> _observers;
         public float zScore {get;set;}
         public Model()
         {
@@ -220,25 +222,25 @@ namespace NormalDistributionGraph
 
 
         //Probability calculations --------------------------
-        public void CalcutlateZScore(float inputNum)
+        public float CalcutlateZScore(float inputNum, float mean, float stdDev)
         {
-            zScore = (A1 - mean) / stdDev;
+                return (inputNum - mean) / (stdDev);
         }
 
         public float IntegralBoundryCalculation(float boundries)
         {
-            float a = ((float)Math.Sqrt(2 * (float)Math.PI)); 
-            float b = ((float)Math.Pow((float)Math.E, -0.5f * (float)Math.Pow(boundries,2f)));
+            float a = 1/((float)Math.Sqrt(2 * (float)Math.PI)); 
+            float b = ((float)Math.Pow((float)Math.E, (-0.5f * ((float)Math.Pow(boundries,2f)))));
             return a * b;
         }
 
-        public float XLessThanP(float boundries)
+        public float PXACalculation(float intergralBoundries )
         {
-            float upperLimit = IntegralBoundryCalculation(zScore);
-            float lowerLimit = IntegralBoundryCalculation(100f);
-
-            return upperLimit - lowerLimit;
+            float top = ((float)SpecialFunctions.Erf((intergralBoundries / (float)Math.Sqrt(2f))));
+            return 0.5f * (top );
         }
+
+        
 
     }
 }

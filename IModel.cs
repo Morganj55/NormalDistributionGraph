@@ -15,6 +15,7 @@ namespace NormalDistributionGraph
         float mean { get; set; }
         float stdDev { get; set; }
         float A1  {get; set; }
+        float xLessThanP { get; set; }
         float A2 { get; set; }
         float B1 { get; set; }
         float B2 { get; set; }
@@ -26,5 +27,14 @@ namespace NormalDistributionGraph
         PointF[] GenerateSDLines();
 
         void Reset();
+
+        float CalcutlateZScore(float inputNum, float mean, float stdDev);
+
+
+        float IntegralBoundryCalculation(float boundries);
+
+
+        float PXACalculation(float x);
+     
     }
 }

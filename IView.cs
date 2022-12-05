@@ -23,5 +23,6 @@ namespace NormalDistributionGraph
         PointF[] _graphXYArray { set; }
         PointF[] _graphSDLines { set; }
         void PaintCurve();
+        Label _lblPXACalculation { get; set; }
     }
 }
