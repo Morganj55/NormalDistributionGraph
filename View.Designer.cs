@@ -71,14 +71,15 @@ namespace NormalDistributionGraph
             // lblValid
             // 
             this.lblValid.AutoSize = true;
-            this.lblValid.Location = new System.Drawing.Point(183, 66);
+            this.lblValid.Location = new System.Drawing.Point(52, 34);
             this.lblValid.Name = "lblValid";
             this.lblValid.Size = new System.Drawing.Size(0, 13);
             this.lblValid.TabIndex = 24;
             // 
             // ProbabilityPanel
             // 
-            this.ProbabilityPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ProbabilityPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProbabilityPanel.BackColor = System.Drawing.SystemColors.Control;
             this.ProbabilityPanel.Controls.Add(this.mike);
             this.ProbabilityPanel.Controls.Add(this.tony);
             this.ProbabilityPanel.Controls.Add(this.steve);
@@ -93,7 +94,7 @@ namespace NormalDistributionGraph
             this.ProbabilityPanel.Controls.Add(this.lblB1);
             this.ProbabilityPanel.Controls.Add(this.lblA2);
             this.ProbabilityPanel.Controls.Add(this.lblA1);
-            this.ProbabilityPanel.Location = new System.Drawing.Point(396, 12);
+            this.ProbabilityPanel.Location = new System.Drawing.Point(20, 444);
             this.ProbabilityPanel.Name = "ProbabilityPanel";
             this.ProbabilityPanel.Size = new System.Drawing.Size(753, 146);
             this.ProbabilityPanel.TabIndex = 23;
@@ -226,8 +227,7 @@ namespace NormalDistributionGraph
             // 
             // btnGenNormDist
             // 
-            this.btnGenNormDist.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnGenNormDist.Location = new System.Drawing.Point(83, 137);
+            this.btnGenNormDist.Location = new System.Drawing.Point(518, 29);
             this.btnGenNormDist.Name = "btnGenNormDist";
             this.btnGenNormDist.Size = new System.Drawing.Size(281, 23);
             this.btnGenNormDist.TabIndex = 21;
@@ -237,9 +237,8 @@ namespace NormalDistributionGraph
             // 
             // lblStdDev
             // 
-            this.lblStdDev.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblStdDev.AutoSize = true;
-            this.lblStdDev.Location = new System.Drawing.Point(95, 105);
+            this.lblStdDev.Location = new System.Drawing.Point(239, 34);
             this.lblStdDev.Name = "lblStdDev";
             this.lblStdDev.Size = new System.Drawing.Size(101, 13);
             this.lblStdDev.TabIndex = 22;
@@ -247,8 +246,7 @@ namespace NormalDistributionGraph
             // 
             // textBoxStdDev
             // 
-            this.textBoxStdDev.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxStdDev.Location = new System.Drawing.Point(199, 101);
+            this.textBoxStdDev.Location = new System.Drawing.Point(343, 30);
             this.textBoxStdDev.Name = "textBoxStdDev";
             this.textBoxStdDev.Size = new System.Drawing.Size(110, 20);
             this.textBoxStdDev.TabIndex = 20;
@@ -257,8 +255,7 @@ namespace NormalDistributionGraph
             // 
             // textBoxMean
             // 
-            this.textBoxMean.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxMean.Location = new System.Drawing.Point(199, 62);
+            this.textBoxMean.Location = new System.Drawing.Point(68, 30);
             this.textBoxMean.Name = "textBoxMean";
             this.textBoxMean.Size = new System.Drawing.Size(110, 20);
             this.textBoxMean.TabIndex = 19;
@@ -267,9 +264,8 @@ namespace NormalDistributionGraph
             // 
             // lblMean
             // 
-            this.lblMean.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMean.AutoSize = true;
-            this.lblMean.Location = new System.Drawing.Point(152, 66);
+            this.lblMean.Location = new System.Drawing.Point(21, 34);
             this.lblMean.Name = "lblMean";
             this.lblMean.Size = new System.Drawing.Size(40, 13);
             this.lblMean.TabIndex = 18;
@@ -301,13 +297,16 @@ namespace NormalDistributionGraph
             // 
             // customCurve
             // 
+            this.customCurve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customCurve.graphSDLines = null;
             this.customCurve.graphXYArray = null;
-            this.customCurve.Location = new System.Drawing.Point(106, 183);
+            this.customCurve.Location = new System.Drawing.Point(20, 78);
             this.customCurve.Name = "customCurve";
             this.customCurve.rectangleArea = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.customCurve.Size = new System.Drawing.Size(1013, 514);
+            this.customCurve.Size = new System.Drawing.Size(919, 336);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
             // 
@@ -315,7 +314,7 @@ namespace NormalDistributionGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 837);
+            this.ClientSize = new System.Drawing.Size(951, 635);
             this.Controls.Add(this.customCurve);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);
