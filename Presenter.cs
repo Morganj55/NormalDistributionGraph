@@ -25,6 +25,7 @@ namespace NormalDistributionGraph
             _model = model;
             _ModelUnsubscriber = model.Subscribe(this);
             Debug.Assert(_ModelUnsubscriber != null, "Subscribing to model must return an unsubscriber");
+          
         }
 
         //Event Handlers
@@ -75,14 +76,10 @@ namespace NormalDistributionGraph
             _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB.ToString() + "%";
             _view._lblPXBCalculationTony.Text = update._XGreaterThanB.ToString() + "%";
         }
-
-    
-
         public void OnError(Exception error)
         {
             throw new NotImplementedException();
         }
-
         public void OnCompleted()
         {
             throw new NotImplementedException();

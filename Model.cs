@@ -28,6 +28,7 @@ namespace NormalDistributionGraph
         public Model()
         {
             _observers = new List<IObserver<ModelUpdate>>();
+            
         }
 
         //IObserverable methods 

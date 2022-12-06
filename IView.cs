@@ -26,5 +26,6 @@ namespace NormalDistributionGraph
         Label _lblPXACalculationSteve { get; set; }
         Label _lblAXBCalculationMike { get; set; }
         Label _lblPXBCalculationTony { get; set; }
+      
     }
 }

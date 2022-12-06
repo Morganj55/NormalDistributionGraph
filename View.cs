@@ -12,8 +12,6 @@ namespace NormalDistributionGraph
 {
     public partial class View : Form, IView
     {
-        
-
         public View()
         {
             InitializeComponent();
@@ -61,12 +59,10 @@ namespace NormalDistributionGraph
         {
             get { return customCurve.rectangleArea; }
         }
-
         public PointF _startingPoint
         {
             get { return customCurve.startingPoint; }
         }
-
         public PointF[] _graphXYArray
         {
             set { customCurve.graphXYArray = value; }
@@ -85,6 +81,7 @@ namespace NormalDistributionGraph
             TextBoxErrorProvider.Add(textBoxA2, errorProviderA2);
             TextBoxErrorProvider.Add(textBoxB1, errorProviderB1);
             TextBoxErrorProvider.Add(textBoxB2, errorProviderB2);
+
             textBoxMean.Text = "0.000";
             textBoxStdDev.Text = "1.000";
         }
@@ -108,5 +105,7 @@ namespace NormalDistributionGraph
         {
             customCurve.Invalidate();
         }
+
+      
     }
 }

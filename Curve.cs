@@ -14,7 +14,7 @@ namespace NormalDistributionGraph
     {
         public Curve()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
        public Rectangle rectangleArea { get; set; }
@@ -24,10 +24,6 @@ namespace NormalDistributionGraph
 
           protected override void OnPaint(PaintEventArgs e)
         {
-            if (graphXYArray == null && graphSDLines == null)
-            {
-                return; 
-            }
             base.OnPaint(e);
             // Fill the background of the working area of the control in solid black
             Brush graphBackgroundBrush = new SolidBrush(Color.White);
@@ -36,12 +32,15 @@ namespace NormalDistributionGraph
                 ClientRectangle.Width - (Margin.Left + Margin.Right) - (Padding.Left + Padding.Right),
                 ClientRectangle.Height - (Margin.Top + Margin.Bottom) - (Padding.Top + Padding.Bottom));
             rectangleArea = rectGraph;
-            e.Graphics.FillRectangle(graphBackgroundBrush, rectGraph);
+            e.Graphics.FillRectangle(graphBackgroundBrush, rectangleArea);
             graphBackgroundBrush.Dispose();
-            
-            Point pBottomLeft = new Point(rectGraph.Left, rectGraph.Bottom);
+           Point pBottomLeft = new Point(rectangleArea.Left, rectangleArea.Bottom);
             startingPoint = pBottomLeft;
-           
+
+            if (graphXYArray == null && graphSDLines == null)
+            {
+                return;
+            }
 
             Pen pen = new Pen(Color.Blue, 4);
             Pen penOrange = new Pen(Color.Orange, 4);
