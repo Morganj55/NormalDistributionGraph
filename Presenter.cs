@@ -50,6 +50,11 @@ namespace NormalDistributionGraph
                 UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
+            if (_model.enableProbPanelDistBtn)
+            {
+                _model.UpdateProbabilities();
+            }
+
         }
 
         private void GenerateNormalDistribution(object sender, EventArgs e)
@@ -66,8 +71,12 @@ namespace NormalDistributionGraph
         {
             _view._probabilityPanel.Enabled = update._enableProbPanelDistBtn;
             _view._btnGenNormDistribution.Enabled = update._enableProbPanelDistBtn;
-
+            _view._lblPXACalculationSteve.Text = update._XLessThanA.ToString();
+            _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB.ToString();
+            _view._lblPXBCalculationTony.Text = update._XGreaterThanB.ToString();
         }
+
+    
 
         public void OnError(Exception error)
         {
@@ -175,9 +184,6 @@ namespace NormalDistributionGraph
                     break;
                 case "textBoxA1":
                     _model.A1 = ParseTextBoxText(clickedTextBox);
-                    //_model.CalcutlateZScore(_model.A1);
-                    //_model.PXACalculation();
-                    //_view._lblPXACalculation.Text = _model.xLessThanP.ToString();
                     break;
                 case "textBoxA2":
                     _model.A2 = ParseTextBoxText(clickedTextBox);

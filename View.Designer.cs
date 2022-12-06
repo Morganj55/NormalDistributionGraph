@@ -30,11 +30,12 @@ namespace NormalDistributionGraph
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.lblValid = new System.Windows.Forms.Label();
             this.ProbabilityPanel = new System.Windows.Forms.Panel();
-            this.lblPA_X_BCalculation = new System.Windows.Forms.Label();
-            this.lblPXBCalculation = new System.Windows.Forms.Label();
-            this.lblPXACalculation = new System.Windows.Forms.Label();
+            this.mike = new System.Windows.Forms.Label();
+            this.tony = new System.Windows.Forms.Label();
+            this.steve = new System.Windows.Forms.Label();
             this.textBoxB2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPXB = new System.Windows.Forms.Label();
@@ -78,9 +79,9 @@ namespace NormalDistributionGraph
             // ProbabilityPanel
             // 
             this.ProbabilityPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ProbabilityPanel.Controls.Add(this.lblPA_X_BCalculation);
-            this.ProbabilityPanel.Controls.Add(this.lblPXBCalculation);
-            this.ProbabilityPanel.Controls.Add(this.lblPXACalculation);
+            this.ProbabilityPanel.Controls.Add(this.mike);
+            this.ProbabilityPanel.Controls.Add(this.tony);
+            this.ProbabilityPanel.Controls.Add(this.steve);
             this.ProbabilityPanel.Controls.Add(this.textBoxB2);
             this.ProbabilityPanel.Controls.Add(this.label7);
             this.ProbabilityPanel.Controls.Add(this.lblPXB);
@@ -98,32 +99,32 @@ namespace NormalDistributionGraph
             this.ProbabilityPanel.Size = new System.Drawing.Size(753, 146);
             this.ProbabilityPanel.TabIndex = 23;
             // 
-            // lblPA_X_BCalculation
+            // mike
             // 
-            this.lblPA_X_BCalculation.AutoSize = true;
-            this.lblPA_X_BCalculation.Location = new System.Drawing.Point(614, 66);
-            this.lblPA_X_BCalculation.Name = "lblPA_X_BCalculation";
-            this.lblPA_X_BCalculation.Size = new System.Drawing.Size(109, 13);
-            this.lblPA_X_BCalculation.TabIndex = 19;
-            this.lblPA_X_BCalculation.Text = "lblPA_X_BCalculation";
+            this.mike.AutoSize = true;
+            this.mike.Location = new System.Drawing.Point(614, 66);
+            this.mike.Name = "mike";
+            this.mike.Size = new System.Drawing.Size(109, 13);
+            this.mike.TabIndex = 19;
+            this.mike.Text = "lblPA_X_BCalculation";
             // 
-            // lblPXBCalculation
+            // tony
             // 
-            this.lblPXBCalculation.AutoSize = true;
-            this.lblPXBCalculation.Location = new System.Drawing.Point(389, 106);
-            this.lblPXBCalculation.Name = "lblPXBCalculation";
-            this.lblPXBCalculation.Size = new System.Drawing.Size(90, 13);
-            this.lblPXBCalculation.TabIndex = 18;
-            this.lblPXBCalculation.Text = "lblPXBCalculation";
+            this.tony.AutoSize = true;
+            this.tony.Location = new System.Drawing.Point(389, 106);
+            this.tony.Name = "tony";
+            this.tony.Size = new System.Drawing.Size(90, 13);
+            this.tony.TabIndex = 18;
+            this.tony.Text = "lblPXBCalculation";
             // 
-            // lblPXACalculation
+            // steve
             // 
-            this.lblPXACalculation.AutoSize = true;
-            this.lblPXACalculation.Location = new System.Drawing.Point(399, 23);
-            this.lblPXACalculation.Name = "lblPXACalculation";
-            this.lblPXACalculation.Size = new System.Drawing.Size(90, 13);
-            this.lblPXACalculation.TabIndex = 17;
-            this.lblPXACalculation.Text = "lblPXACalculation";
+            this.steve.AutoSize = true;
+            this.steve.Location = new System.Drawing.Point(399, 23);
+            this.steve.Name = "steve";
+            this.steve.Size = new System.Drawing.Size(90, 13);
+            this.steve.TabIndex = 17;
+            this.steve.Text = "lblPXACalculation";
             // 
             // textBoxB2
             // 
@@ -303,9 +304,13 @@ namespace NormalDistributionGraph
             // customCurve
             // 
             this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customCurve.graphSDLines = null;
+            this.customCurve.graphXYArray = null;
             this.customCurve.Location = new System.Drawing.Point(106, 183);
             this.customCurve.Name = "customCurve";
+            this.customCurve.rectangleArea = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.customCurve.Size = new System.Drawing.Size(1013, 514);
+            this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
             // 
             // View
@@ -341,9 +346,9 @@ namespace NormalDistributionGraph
 
         private System.Windows.Forms.Label lblValid;
         private System.Windows.Forms.Panel ProbabilityPanel;
-        private System.Windows.Forms.Label lblPA_X_BCalculation;
-        private System.Windows.Forms.Label lblPXBCalculation;
-        private System.Windows.Forms.Label lblPXACalculation;
+        private System.Windows.Forms.Label mike;
+        private System.Windows.Forms.Label tony;
+        private System.Windows.Forms.Label steve;
         private System.Windows.Forms.TextBox textBoxB2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPXB;
