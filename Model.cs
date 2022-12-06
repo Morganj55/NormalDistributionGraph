@@ -247,7 +247,6 @@ namespace NormalDistributionGraph
             float top = ((float)SpecialFunctions.Erf((boundry / (float)Math.Sqrt(2f))));
             return 0.5f * top;
         }
-
         public void CalculateProbabilityPercentage_XLessThanA()
         {
             //if (A1 == default) { return; }
@@ -255,7 +254,6 @@ namespace NormalDistributionGraph
             float lower = CalculateDefiniteIntegralWithoutInputNum(-100f);
             A1Probability = (upper - lower) * 100f;
         }
-
         public void CalculateProbabilityPercentage_ALessThanXLessThanB()
         {
             //if (A2 == default && B1 == default) { return; }
