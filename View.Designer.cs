@@ -309,6 +309,7 @@ namespace NormalDistributionGraph
             this.customCurve.Size = new System.Drawing.Size(919, 336);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
+            
             // 
             // View
             // 
