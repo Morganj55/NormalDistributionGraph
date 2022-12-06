@@ -16,14 +16,14 @@ namespace NormalDistributionGraph
         public bool enableProbPanelDistBtn { get; set; }
         public float mean { get; set; }
         public float stdDev { get; set; }
-        public float A1 { get; set; }
-        public float A1Probability { get; set; }
-        public float xLessThanP { get; set; }
-        public float A2 { get; set; }
-        public float B1 { get; set; }
-        public float A2B2Probability { get; set; }
-        public float B2 { get; set; }
-        public float B1Probability {get; set;}
+        public string A1 { get; set; }
+        public string A1Probability { get; set; }
+        
+        public string A2 { get; set; }
+        public string B1 { get; set; }
+        public string A2B2Probability { get; set; }
+        public string B2 { get; set; }
+        public string B1Probability {get; set;}
         public List<IObserver<ModelUpdate>> _observers;
         public Model()
         {
@@ -79,7 +79,6 @@ namespace NormalDistributionGraph
             CreateSDLinePoints();
             return GraphSDLines;
         }
-
         public void UpdateProbabilities()
         {
             //if (!enableProbPanelDistBtn) { return; }
@@ -234,8 +233,6 @@ namespace NormalDistributionGraph
 
 
         //Probability calculations --------------------------
-
-
         public float CalculateDefiniteIntegralWithInputNum(float inputNum, float mean, float stdDev)
         {
             float zScore = (inputNum - mean) / (stdDev);
@@ -250,24 +247,31 @@ namespace NormalDistributionGraph
         }
         public void CalculateProbabilityPercentage_XLessThanA()
         {
-            //if (A1 == default) { return; }
-            float upper = CalculateDefiniteIntegralWithInputNum(A1, mean, stdDev);
+            if (A1 == "" || A1 == null) { return; }
+            float A1Float = float.Parse(A1);
+            float upper = CalculateDefiniteIntegralWithInputNum(A1Float, mean, stdDev);
             float lower = CalculateDefiniteIntegralWithoutInputNum(-100f);
-            A1Probability = (upper - lower) * 100f;
+            float result = (upper - lower) * 100f;
+            A1Probability = result.ToString();
         }
         public void CalculateProbabilityPercentage_ALessThanXLessThanB()
         {
-            //if (A2 == default && B1 == default) { return; }
-            float upper = CalculateDefiniteIntegralWithInputNum(B2, mean, stdDev);
-            float lower = CalculateDefiniteIntegralWithInputNum(A2, mean, stdDev);
-            A2B2Probability = (upper - lower) * 100f;
+            if (A2 == "" || B2 == "" || A2 == null || B2 == null) { return; }
+            float A2Float = float.Parse(A2);
+            float B2Float = float.Parse(B2);
+            float upper = CalculateDefiniteIntegralWithInputNum(B2Float, mean, stdDev);
+            float lower = CalculateDefiniteIntegralWithInputNum(A2Float, mean, stdDev);
+            float result = (upper - lower) * 100f;
+            A2B2Probability = result.ToString();
         }
         public void CalculateProbabilityPercentage_XGreaterThanB()
         {
-            //if (B1 == default) { return; }
+            if (B1 == "" || B1 == null) { return; }
+            float B1Float = float.Parse(B1);
             float upper = CalculateDefiniteIntegralWithoutInputNum(100f);
-            float lower = CalculateDefiniteIntegralWithInputNum(B1, mean, stdDev);
-            B1Probability = (upper - lower) * 100f;
+            float lower = CalculateDefiniteIntegralWithInputNum(B1Float, mean, stdDev);
+            float result = (upper - lower) * 100f;
+            B1Probability = result.ToString();
         }
     }
 }
