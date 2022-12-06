@@ -129,8 +129,8 @@ namespace NormalDistributionGraph
             this.textBoxB2.Name = "textBoxB2";
             this.textBoxB2.Size = new System.Drawing.Size(100, 20);
             this.textBoxB2.TabIndex = 16;
-            this.textBoxB2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxB2.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxB2.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
+            this.textBoxB2.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // label7
             // 
@@ -174,8 +174,8 @@ namespace NormalDistributionGraph
             this.textBoxB1.Name = "textBoxB1";
             this.textBoxB1.Size = new System.Drawing.Size(100, 20);
             this.textBoxB1.TabIndex = 6;
-            this.textBoxB1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxB1.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxB1.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
+            this.textBoxB1.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // textBoxA2
             // 
@@ -183,8 +183,8 @@ namespace NormalDistributionGraph
             this.textBoxA2.Name = "textBoxA2";
             this.textBoxA2.Size = new System.Drawing.Size(100, 20);
             this.textBoxA2.TabIndex = 5;
-            this.textBoxA2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxA2.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxA2.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
+            this.textBoxA2.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // textBoxA1
             // 
@@ -192,8 +192,8 @@ namespace NormalDistributionGraph
             this.textBoxA1.Name = "textBoxA1";
             this.textBoxA1.Size = new System.Drawing.Size(100, 20);
             this.textBoxA1.TabIndex = 4;
-            this.textBoxA1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxA1.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxA1.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
+            this.textBoxA1.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // lblB1
             // 
@@ -247,8 +247,8 @@ namespace NormalDistributionGraph
             this.textBoxStdDev.Name = "textBoxStdDev";
             this.textBoxStdDev.Size = new System.Drawing.Size(110, 20);
             this.textBoxStdDev.TabIndex = 20;
-            this.textBoxStdDev.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxStdDev.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxStdDev.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxStats_Validating);
+            this.textBoxStdDev.Validated += new System.EventHandler(this.textBoxStats_Validated);
             // 
             // textBoxMean
             // 
@@ -256,8 +256,8 @@ namespace NormalDistributionGraph
             this.textBoxMean.Name = "textBoxMean";
             this.textBoxMean.Size = new System.Drawing.Size(110, 20);
             this.textBoxMean.TabIndex = 19;
-            this.textBoxMean.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            this.textBoxMean.Validated += new System.EventHandler(this.textBox_Validated);
+            this.textBoxMean.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxStats_Validating);
+            this.textBoxMean.Validated += new System.EventHandler(this.textBoxStats_Validated);
             // 
             // lblMean
             // 

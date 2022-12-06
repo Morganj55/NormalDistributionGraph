@@ -18,9 +18,11 @@ namespace NormalDistributionGraph
         public Presenter(IView view)
         {
             this._view = view;
-            _view.ValidatingTextBox += Validating;
-            _view.ValidatedTextBox += Validated;
+            _view.ValidatingStatsTextBox += ValidatingStats;
+            _view.ValidatedStatsTextBox += ValidatedStats;
             _view.GenerateNormalDistribution += GenerateNormalDistribution;
+            _view.ValidatedProbabilityTextBox += ValidatedProbability;
+            _view.ValidatingProbabilityTextBox += ValidatingProbability;
             Model model = new Model();
             _model = model;
             _ModelUnsubscriber = model.Subscribe(this);
@@ -29,10 +31,10 @@ namespace NormalDistributionGraph
         }
 
         //Event Handlers
-        private void Validating(object sender, CancelEventArgs e)
+        private void ValidatingStats(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (!IsTextBoxTextValid(clickedTextBox.Text))
+            if (!IsTextBoxTextValidStats(clickedTextBox.Text))
             {
                 NotValidText(clickedTextBox, _view.TextBoxErrorProvider, e);
                 UpdateModelInvalidState(clickedTextBox);
@@ -41,12 +43,12 @@ namespace NormalDistributionGraph
 
         }
 
-        private void Validated(object sender, EventArgs e)
+        private void ValidatedStats(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (IsTextBoxTextValid(clickedTextBox.Text))
+            if (IsTextBoxTextValidStats(clickedTextBox.Text))
             {
-                ValidText((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                ValidTextStats((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
                 UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
@@ -67,6 +69,32 @@ namespace NormalDistributionGraph
             _model.Reset();
         }
 
+        private void ValidatingProbability(object sender, CancelEventArgs e)
+        {
+            TextBox clickedTextBox = (sender as TextBox);
+            if (!IsTextBoxTextValidProbability(clickedTextBox.Text))
+            {
+                NotValidText(clickedTextBox, _view.TextBoxErrorProvider, e);
+                UpdateModelInvalidState(clickedTextBox);
+                _model.UpdateProbabiltyPanelAndDistributionButton();
+            }
+
+        }
+        private void ValidatedProbability(object sender, EventArgs e)
+        {
+            TextBox clickedTextBox = (sender as TextBox);
+            if (IsTextBoxTextValidProbability(clickedTextBox.Text))
+            {
+                ValidTextProbability((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                UpdateModelValidState(clickedTextBox);
+                UpdateModelInputNumbers(clickedTextBox);
+                _model.UpdateProbabiltyPanelAndDistributionButton();
+            }
+            if (_model.enableProbPanelDistBtn)
+            {
+                _model.UpdateProbabilities();
+            }
+        }
         //IObserverable methods 
         public void OnNext(ModelUpdate update)
         {
@@ -89,7 +117,7 @@ namespace NormalDistributionGraph
 
 
         //Validation Methods 
-        public bool IsTextBoxTextValid(string textBoxText)
+        public bool IsTextBoxTextValidStats(string textBoxText)
         {
             if (textBoxText.Length > 0)
             {
@@ -110,19 +138,48 @@ namespace NormalDistributionGraph
                 return false;
             }
         }
+        public bool IsTextBoxTextValidProbability(string textBoxText)
+        {
+            if (textBoxText.Length > 0)
+            {
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$");
+                System.Text.RegularExpressions.Match match = regex.Match(textBoxText);
+                if (match.Success)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
         public void NotValidText(TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
         {
             e.Cancel = true;
             clickedTextBox.Select(0, clickedTextBox.Text.Length);
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "Please enter a valid number");
         }
-        public void ValidText(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
+        public void ValidTextStats(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
         {
             float inputNum = float.Parse(textBoxText);
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
             textBoxText = inputNum.ToString("0.000");
             clickedTextBox.Text = textBoxText;
             
+        }
+        public void ValidTextProbability(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
+        {
+            if (textBoxText == null)
+            {
+                clickedTextBox.Text = "";   
+            }
+            textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
         }
         public float ParseTextBoxTextFormat(TextBox clickedTextBox)
         {

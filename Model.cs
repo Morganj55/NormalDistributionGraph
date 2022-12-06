@@ -247,7 +247,7 @@ namespace NormalDistributionGraph
         }
         public void CalculateProbabilityPercentage_XLessThanA()
         {
-            if (A1 == "" || A1 == null) { return; }
+            if (A1 == "" || A1 == null) { A1Probability = null; return; }
             float A1Float = float.Parse(A1);
             float upper = CalculateDefiniteIntegralWithInputNum(A1Float, mean, stdDev);
             float lower = CalculateDefiniteIntegralWithoutInputNum(-100f);
@@ -256,7 +256,7 @@ namespace NormalDistributionGraph
         }
         public void CalculateProbabilityPercentage_ALessThanXLessThanB()
         {
-            if (A2 == "" || B2 == "" || A2 == null || B2 == null) { return; }
+            if (A2 == "" || B2 == "" || A2 == null || B2 == null) { A2B2Probability = null; return; }
             float A2Float = float.Parse(A2);
             float B2Float = float.Parse(B2);
             float upper = CalculateDefiniteIntegralWithInputNum(B2Float, mean, stdDev);
@@ -266,7 +266,7 @@ namespace NormalDistributionGraph
         }
         public void CalculateProbabilityPercentage_XGreaterThanB()
         {
-            if (B1 == "" || B1 == null) { return; }
+            if (B1 == "" || B1 == null) { B1Probability = null; return; }
             float B1Float = float.Parse(B1);
             float upper = CalculateDefiniteIntegralWithoutInputNum(100f);
             float lower = CalculateDefiniteIntegralWithInputNum(B1Float, mean, stdDev);

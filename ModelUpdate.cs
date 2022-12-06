@@ -17,19 +17,18 @@ namespace NormalDistributionGraph
         public ModelUpdate(bool enableProbPanelDistBtn, string XLessThanA, string ALessThanXLessThanB, string XGreaterThanB)
         { 
             _enableProbPanelDistBtn = enableProbPanelDistBtn;
-            //if (XLessThanA == default) { _XLessThanA = ""; }
-            //else { _XLessThanA = XLessThanA.ToString("0.000000") + "%"; }
 
-            //if (ALessThanXLessThanB == default) { _ALessThanXLessThanB = ""; }
-            //else { _ALessThanXLessThanB = ALessThanXLessThanB.ToString("0.000000") + "%";  }
-           
+            if (XLessThanA == null) { _XLessThanA = ""; }
+            else { _XLessThanA = XLessThanA + "%"; }
 
-            //if (XGreaterThanB == default) { _XGreaterThanB= ""; }
-            //else { _XGreaterThanB = XGreaterThanB.ToString("0.000000") + "%"; }
+            if (ALessThanXLessThanB == null) { _ALessThanXLessThanB = ""; }
+            else { _ALessThanXLessThanB = ALessThanXLessThanB + "%"; }
 
-            _XLessThanA = XLessThanA + "%";
-            _ALessThanXLessThanB = ALessThanXLessThanB + "%";
-            _XGreaterThanB = XGreaterThanB + "%";
+
+            if (XGreaterThanB == null) { _XGreaterThanB = ""; }
+            else { _XGreaterThanB = XGreaterThanB + "%"; }
+
+          
         }
 
         public bool _enableProbPanelDistBtn { get; set; }
