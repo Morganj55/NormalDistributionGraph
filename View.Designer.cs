@@ -104,27 +104,24 @@ namespace NormalDistributionGraph
             this.mike.AutoSize = true;
             this.mike.Location = new System.Drawing.Point(614, 66);
             this.mike.Name = "mike";
-            this.mike.Size = new System.Drawing.Size(109, 13);
+            this.mike.Size = new System.Drawing.Size(0, 13);
             this.mike.TabIndex = 19;
-            this.mike.Text = "lblPA_X_BCalculation";
             // 
             // tony
             // 
             this.tony.AutoSize = true;
             this.tony.Location = new System.Drawing.Point(389, 106);
             this.tony.Name = "tony";
-            this.tony.Size = new System.Drawing.Size(90, 13);
+            this.tony.Size = new System.Drawing.Size(0, 13);
             this.tony.TabIndex = 18;
-            this.tony.Text = "lblPXBCalculation";
             // 
             // steve
             // 
             this.steve.AutoSize = true;
             this.steve.Location = new System.Drawing.Point(399, 23);
             this.steve.Name = "steve";
-            this.steve.Size = new System.Drawing.Size(90, 13);
+            this.steve.Size = new System.Drawing.Size(0, 13);
             this.steve.TabIndex = 17;
-            this.steve.Text = "lblPXACalculation";
             // 
             // textBoxB2
             // 
@@ -305,17 +302,16 @@ namespace NormalDistributionGraph
             this.customCurve.graphXYArray = null;
             this.customCurve.Location = new System.Drawing.Point(20, 78);
             this.customCurve.Name = "customCurve";
-            this.customCurve.rectangleArea = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.customCurve.Size = new System.Drawing.Size(919, 336);
+            this.customCurve.rectangleArea = new System.Drawing.Rectangle(3, 3, 745, 328);
+            this.customCurve.Size = new System.Drawing.Size(753, 336);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
-            
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 635);
+            this.ClientSize = new System.Drawing.Size(814, 635);
             this.Controls.Add(this.customCurve);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);

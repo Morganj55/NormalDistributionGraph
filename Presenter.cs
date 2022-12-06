@@ -72,9 +72,10 @@ namespace NormalDistributionGraph
         {
             _view._probabilityPanel.Enabled = update._enableProbPanelDistBtn;
             _view._btnGenNormDistribution.Enabled = update._enableProbPanelDistBtn;
-            _view._lblPXACalculationSteve.Text = update._XLessThanA.ToString() + "%";
-            _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB.ToString() + "%";
-            _view._lblPXBCalculationTony.Text = update._XGreaterThanB.ToString() + "%";
+           _view._lblPXACalculationSteve.Text = update._XLessThanA; 
+            _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB;
+            _view._lblPXBCalculationTony.Text = update._XGreaterThanB; 
+            
         }
         public void OnError(Exception error)
         {
@@ -123,11 +124,15 @@ namespace NormalDistributionGraph
             clickedTextBox.Text = textBoxText;
             
         }
-        public float ParseTextBoxText(TextBox clickedTextBox)
+        public float ParseTextBoxTextFormat(TextBox clickedTextBox)
         {
             float inputNum = float.Parse(clickedTextBox.Text);
              string textBoxText = inputNum.ToString("0.000");
             return float.Parse(textBoxText);
+        }
+        public string ParseTextBoxUnformatted(TextBox clickedTextBox)
+        {
+            return clickedTextBox.Text;
         }
 
         //Updating Model Methods 
@@ -174,22 +179,22 @@ namespace NormalDistributionGraph
             switch (clickedTextBox.Name)
             {
                 case "textBoxMean":
-                    _model.mean = ParseTextBoxText(clickedTextBox);
+                    _model.mean = ParseTextBoxTextFormat(clickedTextBox);
                     break;
                 case "textBoxStdDev":
-                    _model.stdDev = ParseTextBoxText(clickedTextBox);
+                    _model.stdDev = ParseTextBoxTextFormat(clickedTextBox);
                     break;
                 case "textBoxA1":
-                    _model.A1 = ParseTextBoxText(clickedTextBox);
+                    _model.A1 = ParseTextBoxUnformatted(clickedTextBox);
                     break;
                 case "textBoxA2":
-                    _model.A2 = ParseTextBoxText(clickedTextBox);
+                    _model.A2 = ParseTextBoxUnformatted(clickedTextBox);
                     break;
                 case "textBoxB1":
-                    _model.B1 = ParseTextBoxText(clickedTextBox);
+                    _model.B1 = ParseTextBoxUnformatted(clickedTextBox);
                     break;
                 case "textBoxB2":
-                    _model.B2 = ParseTextBoxText(clickedTextBox);
+                    _model.B2 = ParseTextBoxUnformatted(clickedTextBox);
                     break;
                 default:
                     break;

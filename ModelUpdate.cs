@@ -14,18 +14,28 @@ namespace NormalDistributionGraph
             _enableProbPanelDistBtn = enableProbPanelDistBtn;
         }
 
-        public ModelUpdate(bool enableProbPanelDistBtn, float XLessThanA, float ALessThanXLessThanB, float XGreaterThanB)
-        {
+        public ModelUpdate(bool enableProbPanelDistBtn, string XLessThanA, string ALessThanXLessThanB, string XGreaterThanB)
+        { 
             _enableProbPanelDistBtn = enableProbPanelDistBtn;
-            _XLessThanA = XLessThanA;
-            _ALessThanXLessThanB = ALessThanXLessThanB;
-            _XGreaterThanB = XGreaterThanB;
+            //if (XLessThanA == default) { _XLessThanA = ""; }
+            //else { _XLessThanA = XLessThanA.ToString("0.000000") + "%"; }
+
+            //if (ALessThanXLessThanB == default) { _ALessThanXLessThanB = ""; }
+            //else { _ALessThanXLessThanB = ALessThanXLessThanB.ToString("0.000000") + "%";  }
+           
+
+            //if (XGreaterThanB == default) { _XGreaterThanB= ""; }
+            //else { _XGreaterThanB = XGreaterThanB.ToString("0.000000") + "%"; }
+
+            _XLessThanA = XLessThanA + "%";
+            _ALessThanXLessThanB = ALessThanXLessThanB + "%";
+            _XGreaterThanB = XGreaterThanB + "%";
         }
 
         public bool _enableProbPanelDistBtn { get; set; }
         
-        public float _XLessThanA { get; set; }
-        public float _ALessThanXLessThanB{ get; set; }
-        public float _XGreaterThanB { get; set; }
+        public string _XLessThanA { get; set; }
+        public string _ALessThanXLessThanB { get; set; }
+        public string _XGreaterThanB { get; set; }
     }
 }

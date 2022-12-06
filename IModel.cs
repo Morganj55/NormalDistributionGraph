@@ -14,11 +14,10 @@ namespace NormalDistributionGraph
         bool enableProbPanelDistBtn { get; set; }
         float mean { get; set; }
         float stdDev { get; set; }
-        float A1  {get; set; }
-        float xLessThanP { get; set; }
-        float A2 { get; set; }
-        float B1 { get; set; }
-        float B2 { get; set; }
+        string A1  {get; set; }
+        string A2 { get; set; }
+        string B1 { get; set; }
+        string B2 { get; set; }
         Rectangle rectangle { get; set; }
         PointF startingPoint{ get; set; }
 
@@ -27,9 +26,6 @@ namespace NormalDistributionGraph
         PointF[] GenerateSDLines();
 
         void Reset();
-
-       
-
         void UpdateProbabilities();
 
 
