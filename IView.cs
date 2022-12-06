@@ -11,9 +11,11 @@ namespace NormalDistributionGraph
 {
     public interface IView
     {
-        event CancelEventHandler ValidatingTextBox;
-        event EventHandler ValidatedTextBox;
+        event CancelEventHandler ValidatingStatsTextBox;
+        event EventHandler ValidatedStatsTextBox;
         event EventHandler GenerateNormalDistribution;
+        event CancelEventHandler ValidatingProbabilityTextBox;
+        event EventHandler ValidatedProbabilityTextBox;
         Panel _probabilityPanel { get; set; }
         Button _btnGenNormDistribution { get; set; }
         Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }

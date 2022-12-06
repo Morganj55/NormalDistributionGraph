@@ -22,9 +22,11 @@ namespace NormalDistributionGraph
         private readonly Presenter presenter;
 
         //Properties and Events 
-        public event CancelEventHandler ValidatingTextBox;
-        public event EventHandler ValidatedTextBox;
+        public event CancelEventHandler ValidatingStatsTextBox;
+        public event EventHandler ValidatedStatsTextBox;
         public event EventHandler GenerateNormalDistribution;
+        public event CancelEventHandler ValidatingProbabilityTextBox;
+        public event EventHandler ValidatedProbabilityTextBox;
         public Dictionary<TextBox, ErrorProvider> TextBoxErrorProvider { get; set; }
  
 
@@ -86,14 +88,24 @@ namespace NormalDistributionGraph
             textBoxStdDev.Text = "1.000";
         }
 
-        public void textBox_Validating(object sender, CancelEventArgs e)
+        public void textBoxStats_Validating(object sender, CancelEventArgs e)
         {
-            ValidatingTextBox?.Invoke(sender, e);
+            ValidatingStatsTextBox?.Invoke(sender, e);
         }
 
-        public void textBox_Validated(object sender, EventArgs e)
+        public void textBoxStats_Validated(object sender, EventArgs e)
         {
-            ValidatedTextBox?.Invoke(sender, EventArgs.Empty);
+            ValidatedStatsTextBox?.Invoke(sender, EventArgs.Empty);
+        }
+
+        public void textBoxProbability_Validated(object sender, EventArgs e)
+        {
+            ValidatedProbabilityTextBox?.Invoke(sender, EventArgs.Empty);
+        }
+
+        public void textBoxProbability_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatingProbabilityTextBox?.Invoke(sender, e);
         }
 
         private void btnGenNormDist_Click(object sender, EventArgs e)
