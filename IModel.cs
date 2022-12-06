@@ -28,13 +28,12 @@ namespace NormalDistributionGraph
 
         void Reset();
 
-        float CalcutlateZScore(float inputNum, float mean, float stdDev);
+       
+
+        void UpdateProbabilities();
 
 
-        float IntegralBoundryCalculation(float boundries);
-
-
-        float PXACalculation(float x);
+       
      
     }
 }

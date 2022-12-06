@@ -40,10 +40,21 @@ namespace NormalDistributionGraph
             get { return btnGenNormDist; }
             set { btnGenNormDist = value; }
         }
-        public Label _lblPXACalculation
+        public Label _lblPXACalculationSteve
         {
-            get { return lblPXACalculation; }
-            set { lblPXACalculation = value; }
+            get { return steve; }
+            set { steve = value; }
+        }
+
+        public Label _lblAXBCalculationMike
+        {
+            get { return mike; }
+            set { mike = value; }
+        }
+        public Label _lblPXBCalculationTony
+        {
+            get { return tony; }
+            set {tony = value; }
         }
 
         public Rectangle _rectangleArea

@@ -17,12 +17,14 @@ namespace NormalDistributionGraph
         public float mean { get; set; }
         public float stdDev { get; set; }
         public float A1 { get; set; }
+        public float A1Probability { get; set; }
         public float xLessThanP { get; set; }
         public float A2 { get; set; }
         public float B1 { get; set; }
+        public float A2B2Probability { get; set; }
         public float B2 { get; set; }
+        public float B1Probability {get; set;}
         public List<IObserver<ModelUpdate>> _observers;
-        public float zScore {get;set;}
         public Model()
         {
             _observers = new List<IObserver<ModelUpdate>>();
@@ -37,6 +39,7 @@ namespace NormalDistributionGraph
                 observer.OnNext(update);
             }
         }
+      
 
         public IDisposable Subscribe(IObserver<ModelUpdate> observer)
         {
@@ -76,6 +79,14 @@ namespace NormalDistributionGraph
             return GraphSDLines;
         }
 
+        public void UpdateProbabilities()
+        {
+            //if (!enableProbPanelDistBtn) { return; }
+            CalculateProbabilityPercentage_XLessThanA();
+            CalculateProbabilityPercentage_ALessThanXLessThanB();
+            CalculateProbabilityPercentage_XGreaterThanB();
+            SendMessage(new ModelUpdate(enableProbPanelDistBtn, A1Probability, A2B2Probability, B1Probability));
+        }
 
         //Custom control------------------------------------------------
         //Custom control properties 
@@ -222,25 +233,42 @@ namespace NormalDistributionGraph
 
 
         //Probability calculations --------------------------
-        public float CalcutlateZScore(float inputNum, float mean, float stdDev)
+
+
+        public float CalculateDefiniteIntegralWithInputNum(float inputNum, float mean, float stdDev)
         {
-                return (inputNum - mean) / (stdDev);
+            float zScore = (inputNum - mean) / (stdDev);
+            float top = ((float)SpecialFunctions.Erf((zScore/ (float)Math.Sqrt(2f))));
+            return 0.5f * top;
+        }
+        public float CalculateDefiniteIntegralWithoutInputNum(float boundry)
+        {
+            
+            float top = ((float)SpecialFunctions.Erf((boundry / (float)Math.Sqrt(2f))));
+            return 0.5f * top;
         }
 
-        public float IntegralBoundryCalculation(float boundries)
+        public void CalculateProbabilityPercentage_XLessThanA()
         {
-            float a = 1/((float)Math.Sqrt(2 * (float)Math.PI)); 
-            float b = ((float)Math.Pow((float)Math.E, (-0.5f * ((float)Math.Pow(boundries,2f)))));
-            return a * b;
+            //if (A1 == default) { return; }
+            float upper = CalculateDefiniteIntegralWithInputNum(A1, mean, stdDev);
+            float lower = CalculateDefiniteIntegralWithoutInputNum(-100f);
+            A1Probability = (upper - lower) * 100f;
         }
 
-        public float PXACalculation(float intergralBoundries )
+        public void CalculateProbabilityPercentage_ALessThanXLessThanB()
         {
-            float top = ((float)SpecialFunctions.Erf((intergralBoundries / (float)Math.Sqrt(2f))));
-            return 0.5f * (top );
+            //if (A2 == default && B1 == default) { return; }
+            float upper = CalculateDefiniteIntegralWithInputNum(B2, mean, stdDev);
+            float lower = CalculateDefiniteIntegralWithInputNum(A2, mean, stdDev);
+            A2B2Probability = (upper - lower) * 100f;
         }
-
-        
-
+        public void CalculateProbabilityPercentage_XGreaterThanB()
+        {
+            //if (B1 == default) { return; }
+            float upper = CalculateDefiniteIntegralWithoutInputNum(100f);
+            float lower = CalculateDefiniteIntegralWithInputNum(B1, mean, stdDev);
+            B1Probability = (upper - lower) * 100f;
+        }
     }
 }
