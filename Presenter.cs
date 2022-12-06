@@ -71,9 +71,9 @@ namespace NormalDistributionGraph
         {
             _view._probabilityPanel.Enabled = update._enableProbPanelDistBtn;
             _view._btnGenNormDistribution.Enabled = update._enableProbPanelDistBtn;
-            _view._lblPXACalculationSteve.Text = update._XLessThanA.ToString();
-            _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB.ToString();
-            _view._lblPXBCalculationTony.Text = update._XGreaterThanB.ToString();
+            _view._lblPXACalculationSteve.Text = update._XLessThanA.ToString() + "%";
+            _view._lblAXBCalculationMike.Text = update._ALessThanXLessThanB.ToString() + "%";
+            _view._lblPXBCalculationTony.Text = update._XGreaterThanB.ToString() + "%";
         }
 
     

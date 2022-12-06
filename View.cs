@@ -85,7 +85,8 @@ namespace NormalDistributionGraph
             TextBoxErrorProvider.Add(textBoxA2, errorProviderA2);
             TextBoxErrorProvider.Add(textBoxB1, errorProviderB1);
             TextBoxErrorProvider.Add(textBoxB2, errorProviderB2);
-            
+            textBoxMean.Text = "0.000";
+            textBoxStdDev.Text = "1.000";
         }
 
         public void textBox_Validating(object sender, CancelEventArgs e)

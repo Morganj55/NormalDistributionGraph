@@ -93,7 +93,6 @@ namespace NormalDistributionGraph
             this.ProbabilityPanel.Controls.Add(this.lblB1);
             this.ProbabilityPanel.Controls.Add(this.lblA2);
             this.ProbabilityPanel.Controls.Add(this.lblA1);
-            this.ProbabilityPanel.Enabled = false;
             this.ProbabilityPanel.Location = new System.Drawing.Point(396, 12);
             this.ProbabilityPanel.Name = "ProbabilityPanel";
             this.ProbabilityPanel.Size = new System.Drawing.Size(753, 146);
@@ -228,7 +227,6 @@ namespace NormalDistributionGraph
             // btnGenNormDist
             // 
             this.btnGenNormDist.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnGenNormDist.Enabled = false;
             this.btnGenNormDist.Location = new System.Drawing.Point(83, 137);
             this.btnGenNormDist.Name = "btnGenNormDist";
             this.btnGenNormDist.Size = new System.Drawing.Size(281, 23);
