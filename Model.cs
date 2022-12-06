@@ -17,14 +17,19 @@ namespace NormalDistributionGraph
         public float mean { get; set; }
         public float stdDev { get; set; }
         public string A1 { get; set; }
-        public string A1Probability { get; set; }
-        
         public string A2 { get; set; }
         public string B1 { get; set; }
-        public string A2B2Probability { get; set; }
         public string B2 { get; set; }
+      
+        //Probability Properties 
+        public string A1Probability { get; set; } 
+        public string A2B2Probability { get; set; }
         public string B1Probability {get; set;}
-        public List<IObserver<ModelUpdate>> _observers;
+
+        //Observer Properties
+        public List<IObserver<ModelUpdate>> _observers; 
+
+        //Constructor
         public Model()
         {
             _observers = new List<IObserver<ModelUpdate>>();
@@ -32,7 +37,6 @@ namespace NormalDistributionGraph
         }
 
         //IObserverable methods 
-
         public void SendMessage(ModelUpdate update)
         {
             foreach (var observer in _observers)
@@ -40,8 +44,6 @@ namespace NormalDistributionGraph
                 observer.OnNext(update);
             }
         }
-      
-
         public IDisposable Subscribe(IObserver<ModelUpdate> observer)
         {
             if (!_observers.Contains(observer))

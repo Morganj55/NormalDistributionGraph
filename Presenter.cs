@@ -11,10 +11,12 @@ namespace NormalDistributionGraph
 {
     public class Presenter : IObserver<ModelUpdate>
     {
+        //Properties 
         private readonly IView _view;
         private readonly IModel _model;
         private readonly IDisposable _ModelUnsubscriber;
 
+        //Constructor
         public Presenter(IView view)
         {
             this._view = view;
@@ -42,7 +44,6 @@ namespace NormalDistributionGraph
             }
 
         }
-
         private void ValidatedStats(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
@@ -59,7 +60,6 @@ namespace NormalDistributionGraph
             }
 
         }
-
         private void GenerateNormalDistribution(object sender, EventArgs e)
         {
             SetCustomControlProperteis();
@@ -68,7 +68,6 @@ namespace NormalDistributionGraph
             _view.PaintCurve();
             _model.Reset();
         }
-
         private void ValidatingProbability(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
@@ -95,6 +94,7 @@ namespace NormalDistributionGraph
                 _model.UpdateProbabilities();
             }
         }
+
         //IObserverable methods 
         public void OnNext(ModelUpdate update)
         {
@@ -199,13 +199,11 @@ namespace NormalDistributionGraph
             {
                 case "textBoxMean":
                     {
-                        //meanValue = currentTextBoxString;
                         _model.meanValidated = true;
                         break;
                     }
                 case "textBoxStdDev":
                     {
-                        //stdDev = currentTextBoxString;
                         _model.stdDevValidated = true;
                         break;
                     }
