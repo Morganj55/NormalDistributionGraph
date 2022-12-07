@@ -86,6 +86,8 @@ namespace NormalDistributionGraph
 
             textBoxMean.Text = "0.000";
             textBoxStdDev.Text = "1.000";
+            ValidatedStatsTextBox.Invoke(textBoxMean, e);
+            ValidatedStatsTextBox.Invoke(textBoxStdDev, e);
         }
 
         public void textBoxStats_Validating(object sender, CancelEventArgs e)

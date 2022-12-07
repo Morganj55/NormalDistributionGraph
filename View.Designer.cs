@@ -300,10 +300,10 @@ namespace NormalDistributionGraph
             this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customCurve.graphSDLines = null;
             this.customCurve.graphXYArray = null;
-            this.customCurve.Location = new System.Drawing.Point(20, 78);
+            this.customCurve.Location = new System.Drawing.Point(104, 77);
             this.customCurve.Name = "customCurve";
-            this.customCurve.rectangleArea = new System.Drawing.Rectangle(3, 3, 745, 328);
-            this.customCurve.Size = new System.Drawing.Size(753, 336);
+            this.customCurve.rectangleArea = new System.Drawing.Rectangle(3, 3, 600, 328);
+            this.customCurve.Size = new System.Drawing.Size(608, 336);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
             // 
@@ -321,7 +321,7 @@ namespace NormalDistributionGraph
             this.Controls.Add(this.textBoxMean);
             this.Controls.Add(this.lblMean);
             this.Name = "View";
-            this.Text = "Form1";
+            this.Text = "MSO-TrainingApp1";
             this.Load += new System.EventHandler(this.View_Load);
             this.ProbabilityPanel.ResumeLayout(false);
             this.ProbabilityPanel.PerformLayout();
