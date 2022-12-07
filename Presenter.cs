@@ -13,7 +13,7 @@ namespace NormalDistributionGraph
     {
         //Properties 
         private readonly IView _view;
-        private readonly IModel _model;
+        public readonly IModel _model;
         private readonly IDisposable _ModelUnsubscriber;
 
         //Constructor
@@ -184,7 +184,7 @@ namespace NormalDistributionGraph
         public float ParseTextBoxTextFormat(TextBox clickedTextBox)
         {
             float inputNum = float.Parse(clickedTextBox.Text);
-             string textBoxText = inputNum.ToString("0.000");
+            string textBoxText = inputNum.ToString("0.000");
             return float.Parse(textBoxText);
         }
         public string ParseTextBoxUnformatted(TextBox clickedTextBox)

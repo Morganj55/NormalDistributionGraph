@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NormalDistributionGraph
 {
-    interface IModel
+    public interface IModel
     {
         bool meanValidated {get;set;}
         bool stdDevValidated { get; set; }
