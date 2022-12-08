@@ -83,7 +83,6 @@ namespace NormalDistributionGraph
         }
         public void UpdateProbabilities()
         {
-            //if (!enableProbPanelDistBtn) { return; }
             CalculateProbabilityPercentage_XLessThanA();
             CalculateProbabilityPercentage_ALessThanXLessThanB();
             CalculateProbabilityPercentage_XGreaterThanB();
@@ -92,12 +91,12 @@ namespace NormalDistributionGraph
 
         //Custom control------------------------------------------------
         //Custom control properties 
-        List<float> XValues = new List<float>();
-        List<float> YValues = new List<float>();
-        List<float> GraphXValues = new List<float>();
-        List<float> GraphYValues = new List<float>();
-        PointF[] GraphXYArray = new PointF[200];
-        PointF[] GraphSDLines = new PointF[10];
+        public List<float> XValues = new List<float>();
+        public List<float> YValues = new List<float>();
+        public List<float> GraphXValues = new List<float>();
+        public List<float> GraphYValues = new List<float>();
+        public PointF[] GraphXYArray = new PointF[200];
+        public PointF[] GraphSDLines = new PointF[10];
         public Rectangle rectangle { get; set; }
         public PointF startingPoint { get; set; }
 
@@ -243,7 +242,6 @@ namespace NormalDistributionGraph
         }
         public float CalculateDefiniteIntegralWithoutInputNum(float boundry)
         {
-            
             float top = ((float)SpecialFunctions.Erf((boundry / (float)Math.Sqrt(2f))));
             return 0.5f * top;
         }
