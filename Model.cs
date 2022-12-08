@@ -105,7 +105,6 @@ namespace NormalDistributionGraph
         //Custom Control Methods : Drawing the Curve 
         public void CreateXCoordinates()
         {
-
             float firstXCoordinate = mean - (3.00f * stdDev);
             XValues.Add(firstXCoordinate);
             float currentValue = firstXCoordinate;
@@ -157,7 +156,7 @@ namespace NormalDistributionGraph
         {
             GraphXValues.Add(startingPoint.X);
             float currentValue = startingPoint.X;
-            float increment = (rectangle.Width / XValues.Count); // 6 is used because that covers the full range of -3 SD to +3SD, 199 is used because I want 200 x coordinates and I have already added one into the list
+            float increment = (rectangle.Width / XValues.Count); 
             for (int i = 0; i < 199; i++)
             {
                 float nextXValue = currentValue + increment;
