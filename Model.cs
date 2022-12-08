@@ -235,6 +235,7 @@ namespace NormalDistributionGraph
 
 
         //Probability calculations --------------------------
+        
         public float CalculateDefiniteIntegralWithInputNum(float inputNum, float mean, float stdDev)
         {
             float zScore = (inputNum - mean) / (stdDev);

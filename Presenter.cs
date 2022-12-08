@@ -181,7 +181,7 @@ namespace NormalDistributionGraph
             }
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
         }
-        public float ParseTextBoxTextFormat(TextBox clickedTextBox)
+        public float ParseTextBoxTextFormatted(TextBox clickedTextBox)
         {
             float inputNum = float.Parse(clickedTextBox.Text);
             string textBoxText = inputNum.ToString("0.000");
@@ -234,10 +234,10 @@ namespace NormalDistributionGraph
             switch (clickedTextBox.Name)
             {
                 case "textBoxMean":
-                    _model.mean = ParseTextBoxTextFormat(clickedTextBox);
+                    _model.mean = ParseTextBoxTextFormatted(clickedTextBox);
                     break;
                 case "textBoxStdDev":
-                    _model.stdDev = ParseTextBoxTextFormat(clickedTextBox);
+                    _model.stdDev = ParseTextBoxTextFormatted(clickedTextBox);
                     break;
                 case "textBoxA1":
                     _model.A1 = ParseTextBoxUnformatted(clickedTextBox);
