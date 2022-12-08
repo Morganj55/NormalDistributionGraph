@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace NormalDistributionGraph
 {
@@ -36,9 +37,9 @@ namespace NormalDistributionGraph
         private void ValidatingStats(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (!IsTextBoxTextValidStats(clickedTextBox.Text))
+            if (!TextBoxTextIsValid_Stats(clickedTextBox.Text))
             {
-                NotValidText(clickedTextBox, _view.TextBoxErrorProvider, e);
+                FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
                 UpdateModelInvalidState(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
@@ -47,9 +48,9 @@ namespace NormalDistributionGraph
         private void ValidatedStats(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (IsTextBoxTextValidStats(clickedTextBox.Text))
+            if (TextBoxTextIsValid_Stats(clickedTextBox.Text))
             {
-                ValidTextStats((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                SetFormattedTextClearError_Stats((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
                 UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
@@ -71,9 +72,9 @@ namespace NormalDistributionGraph
         private void ValidatingProbability(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (!IsTextBoxTextValidProbability(clickedTextBox.Text))
+            if (!TextBoxTextIsValid_Probability(clickedTextBox.Text))
             {
-                NotValidText(clickedTextBox, _view.TextBoxErrorProvider, e);
+                FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
                 UpdateModelInvalidState(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
@@ -82,7 +83,7 @@ namespace NormalDistributionGraph
         private void ValidatedProbability(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (IsTextBoxTextValidProbability(clickedTextBox.Text))
+            if (TextBoxTextIsValid_Probability(clickedTextBox.Text))
             {
                 ValidTextProbability((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
@@ -117,12 +118,12 @@ namespace NormalDistributionGraph
 
 
         //Validation Methods 
-        public bool IsTextBoxTextValidStats(string textBoxText)
+        public bool TextBoxTextIsValid_Stats(string textBoxText)
         {
             if (textBoxText.Length > 0)
             {
-                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$");
-                System.Text.RegularExpressions.Match match = regex.Match(textBoxText);
+                Regex regex = new System.Text.RegularExpressions.Regex(@"^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$");
+                Match match = regex.Match(textBoxText);
                 if (match.Success)
                 {
                     return true;
@@ -138,7 +139,7 @@ namespace NormalDistributionGraph
                 return false;
             }
         }
-        public bool IsTextBoxTextValidProbability(string textBoxText)
+        public bool TextBoxTextIsValid_Probability(string textBoxText)
         {
             if (textBoxText.Length > 0)
             {
@@ -159,13 +160,13 @@ namespace NormalDistributionGraph
                 return true;
             }
         }
-        public void NotValidText(TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
+        public void FocusAndHighlightTextSetError(TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider, CancelEventArgs e)
         {
             e.Cancel = true;
             clickedTextBox.Select(0, clickedTextBox.Text.Length);
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "Please enter a valid number");
         }
-        public void ValidTextStats(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
+        public void SetFormattedTextClearError_Stats(string textBoxText, TextBox clickedTextBox, Dictionary<TextBox, ErrorProvider> textBoxErrorProvider)
         {
             float inputNum = float.Parse(textBoxText);
             textBoxErrorProvider[clickedTextBox].SetError(clickedTextBox, "");
