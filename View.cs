@@ -115,6 +115,12 @@ namespace NormalDistributionGraph
             GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
         }
 
+        private void customContolResise(object sender, EventArgs e)
+        {
+            GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
+            PaintCurve();
+        }
+
         public void PaintCurve()
         {
             customCurve.Invalidate();

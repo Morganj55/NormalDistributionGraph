@@ -71,9 +71,10 @@ namespace NormalDistributionGraph
             // lblValid
             // 
             this.lblValid.AutoSize = true;
-            this.lblValid.Location = new System.Drawing.Point(52, 34);
+            this.lblValid.Location = new System.Drawing.Point(69, 42);
+            this.lblValid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValid.Name = "lblValid";
-            this.lblValid.Size = new System.Drawing.Size(0, 13);
+            this.lblValid.Size = new System.Drawing.Size(0, 16);
             this.lblValid.TabIndex = 24;
             // 
             // ProbabilityPanel
@@ -94,40 +95,45 @@ namespace NormalDistributionGraph
             this.ProbabilityPanel.Controls.Add(this.lblB1);
             this.ProbabilityPanel.Controls.Add(this.lblA2);
             this.ProbabilityPanel.Controls.Add(this.lblA1);
-            this.ProbabilityPanel.Location = new System.Drawing.Point(20, 444);
+            this.ProbabilityPanel.Location = new System.Drawing.Point(27, 546);
+            this.ProbabilityPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProbabilityPanel.Name = "ProbabilityPanel";
-            this.ProbabilityPanel.Size = new System.Drawing.Size(753, 146);
+            this.ProbabilityPanel.Size = new System.Drawing.Size(1004, 180);
             this.ProbabilityPanel.TabIndex = 23;
             // 
             // mike
             // 
             this.mike.AutoSize = true;
-            this.mike.Location = new System.Drawing.Point(614, 66);
+            this.mike.Location = new System.Drawing.Point(819, 81);
+            this.mike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mike.Name = "mike";
-            this.mike.Size = new System.Drawing.Size(0, 13);
+            this.mike.Size = new System.Drawing.Size(0, 16);
             this.mike.TabIndex = 19;
             // 
             // tony
             // 
             this.tony.AutoSize = true;
-            this.tony.Location = new System.Drawing.Point(389, 106);
+            this.tony.Location = new System.Drawing.Point(519, 130);
+            this.tony.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tony.Name = "tony";
-            this.tony.Size = new System.Drawing.Size(0, 13);
+            this.tony.Size = new System.Drawing.Size(0, 16);
             this.tony.TabIndex = 18;
             // 
             // steve
             // 
             this.steve.AutoSize = true;
-            this.steve.Location = new System.Drawing.Point(399, 23);
+            this.steve.Location = new System.Drawing.Point(532, 28);
+            this.steve.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.steve.Name = "steve";
-            this.steve.Size = new System.Drawing.Size(0, 13);
+            this.steve.Size = new System.Drawing.Size(0, 16);
             this.steve.TabIndex = 17;
             // 
             // textBoxB2
             // 
-            this.textBoxB2.Location = new System.Drawing.Point(324, 62);
+            this.textBoxB2.Location = new System.Drawing.Point(432, 76);
+            this.textBoxB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxB2.Name = "textBoxB2";
-            this.textBoxB2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxB2.Size = new System.Drawing.Size(132, 22);
             this.textBoxB2.TabIndex = 16;
             this.textBoxB2.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
             this.textBoxB2.Validated += new System.EventHandler(this.textBoxProbability_Validated);
@@ -135,62 +141,69 @@ namespace NormalDistributionGraph
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(510, 66);
+            this.label7.Location = new System.Drawing.Point(680, 81);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.Size = new System.Drawing.Size(124, 16);
             this.label7.TabIndex = 15;
             this.label7.Text = "Probability (A<x<B):";
             // 
             // lblPXB
             // 
             this.lblPXB.AutoSize = true;
-            this.lblPXB.Location = new System.Drawing.Point(301, 106);
+            this.lblPXB.Location = new System.Drawing.Point(401, 130);
+            this.lblPXB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPXB.Name = "lblPXB";
-            this.lblPXB.Size = new System.Drawing.Size(85, 13);
+            this.lblPXB.Size = new System.Drawing.Size(108, 16);
             this.lblPXB.TabIndex = 14;
             this.lblPXB.Text = "Probability (x>B):";
             // 
             // lblB2
             // 
             this.lblB2.AutoSize = true;
-            this.lblB2.Location = new System.Drawing.Point(301, 65);
+            this.lblB2.Location = new System.Drawing.Point(401, 80);
+            this.lblB2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB2.Name = "lblB2";
-            this.lblB2.Size = new System.Drawing.Size(17, 13);
+            this.lblB2.Size = new System.Drawing.Size(20, 16);
             this.lblB2.TabIndex = 13;
             this.lblB2.Text = "B:";
             // 
             // lblPXA
             // 
             this.lblPXA.AutoSize = true;
-            this.lblPXA.Location = new System.Drawing.Point(301, 24);
+            this.lblPXA.Location = new System.Drawing.Point(401, 30);
+            this.lblPXA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPXA.Name = "lblPXA";
-            this.lblPXA.Size = new System.Drawing.Size(91, 13);
+            this.lblPXA.Size = new System.Drawing.Size(114, 16);
             this.lblPXA.TabIndex = 12;
             this.lblPXA.Text = "Probability (x < A):";
             // 
             // textBoxB1
             // 
-            this.textBoxB1.Location = new System.Drawing.Point(74, 103);
+            this.textBoxB1.Location = new System.Drawing.Point(99, 127);
+            this.textBoxB1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxB1.Name = "textBoxB1";
-            this.textBoxB1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxB1.Size = new System.Drawing.Size(132, 22);
             this.textBoxB1.TabIndex = 6;
             this.textBoxB1.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
             this.textBoxB1.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // textBoxA2
             // 
-            this.textBoxA2.Location = new System.Drawing.Point(74, 63);
+            this.textBoxA2.Location = new System.Drawing.Point(99, 78);
+            this.textBoxA2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxA2.Name = "textBoxA2";
-            this.textBoxA2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxA2.Size = new System.Drawing.Size(132, 22);
             this.textBoxA2.TabIndex = 5;
             this.textBoxA2.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
             this.textBoxA2.Validated += new System.EventHandler(this.textBoxProbability_Validated);
             // 
             // textBoxA1
             // 
-            this.textBoxA1.Location = new System.Drawing.Point(74, 23);
+            this.textBoxA1.Location = new System.Drawing.Point(99, 28);
+            this.textBoxA1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxA1.Name = "textBoxA1";
-            this.textBoxA1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxA1.Size = new System.Drawing.Size(132, 22);
             this.textBoxA1.TabIndex = 4;
             this.textBoxA1.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxProbability_Validating);
             this.textBoxA1.Validated += new System.EventHandler(this.textBoxProbability_Validated);
@@ -198,35 +211,39 @@ namespace NormalDistributionGraph
             // lblB1
             // 
             this.lblB1.AutoSize = true;
-            this.lblB1.Location = new System.Drawing.Point(27, 106);
+            this.lblB1.Location = new System.Drawing.Point(36, 130);
+            this.lblB1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB1.Name = "lblB1";
-            this.lblB1.Size = new System.Drawing.Size(17, 13);
+            this.lblB1.Size = new System.Drawing.Size(20, 16);
             this.lblB1.TabIndex = 8;
             this.lblB1.Text = "B:";
             // 
             // lblA2
             // 
             this.lblA2.AutoSize = true;
-            this.lblA2.Location = new System.Drawing.Point(27, 66);
+            this.lblA2.Location = new System.Drawing.Point(36, 81);
+            this.lblA2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblA2.Name = "lblA2";
-            this.lblA2.Size = new System.Drawing.Size(17, 13);
+            this.lblA2.Size = new System.Drawing.Size(20, 16);
             this.lblA2.TabIndex = 7;
             this.lblA2.Text = "A:";
             // 
             // lblA1
             // 
             this.lblA1.AutoSize = true;
-            this.lblA1.Location = new System.Drawing.Point(27, 26);
+            this.lblA1.Location = new System.Drawing.Point(36, 32);
+            this.lblA1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblA1.Name = "lblA1";
-            this.lblA1.Size = new System.Drawing.Size(17, 13);
+            this.lblA1.Size = new System.Drawing.Size(20, 16);
             this.lblA1.TabIndex = 6;
             this.lblA1.Text = "A:";
             // 
             // btnGenNormDist
             // 
-            this.btnGenNormDist.Location = new System.Drawing.Point(518, 29);
+            this.btnGenNormDist.Location = new System.Drawing.Point(691, 36);
+            this.btnGenNormDist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenNormDist.Name = "btnGenNormDist";
-            this.btnGenNormDist.Size = new System.Drawing.Size(281, 23);
+            this.btnGenNormDist.Size = new System.Drawing.Size(375, 28);
             this.btnGenNormDist.TabIndex = 21;
             this.btnGenNormDist.Text = "Generate Normal Distribution";
             this.btnGenNormDist.UseVisualStyleBackColor = true;
@@ -235,26 +252,29 @@ namespace NormalDistributionGraph
             // lblStdDev
             // 
             this.lblStdDev.AutoSize = true;
-            this.lblStdDev.Location = new System.Drawing.Point(239, 34);
+            this.lblStdDev.Location = new System.Drawing.Point(319, 42);
+            this.lblStdDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStdDev.Name = "lblStdDev";
-            this.lblStdDev.Size = new System.Drawing.Size(101, 13);
+            this.lblStdDev.Size = new System.Drawing.Size(126, 16);
             this.lblStdDev.TabIndex = 22;
             this.lblStdDev.Text = "Standard Deviation:";
             // 
             // textBoxStdDev
             // 
-            this.textBoxStdDev.Location = new System.Drawing.Point(343, 30);
+            this.textBoxStdDev.Location = new System.Drawing.Point(457, 37);
+            this.textBoxStdDev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxStdDev.Name = "textBoxStdDev";
-            this.textBoxStdDev.Size = new System.Drawing.Size(110, 20);
+            this.textBoxStdDev.Size = new System.Drawing.Size(145, 22);
             this.textBoxStdDev.TabIndex = 20;
             this.textBoxStdDev.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxStats_Validating);
             this.textBoxStdDev.Validated += new System.EventHandler(this.textBoxStats_Validated);
             // 
             // textBoxMean
             // 
-            this.textBoxMean.Location = new System.Drawing.Point(68, 30);
+            this.textBoxMean.Location = new System.Drawing.Point(91, 37);
+            this.textBoxMean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxMean.Name = "textBoxMean";
-            this.textBoxMean.Size = new System.Drawing.Size(110, 20);
+            this.textBoxMean.Size = new System.Drawing.Size(145, 22);
             this.textBoxMean.TabIndex = 19;
             this.textBoxMean.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxStats_Validating);
             this.textBoxMean.Validated += new System.EventHandler(this.textBoxStats_Validated);
@@ -262,9 +282,10 @@ namespace NormalDistributionGraph
             // lblMean
             // 
             this.lblMean.AutoSize = true;
-            this.lblMean.Location = new System.Drawing.Point(21, 34);
+            this.lblMean.Location = new System.Drawing.Point(28, 42);
+            this.lblMean.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMean.Name = "lblMean";
-            this.lblMean.Size = new System.Drawing.Size(40, 13);
+            this.lblMean.Size = new System.Drawing.Size(48, 16);
             this.lblMean.TabIndex = 18;
             this.lblMean.Text = "Mean: ";
             // 
@@ -300,18 +321,20 @@ namespace NormalDistributionGraph
             this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customCurve.graphSDLines = null;
             this.customCurve.graphXYArray = null;
-            this.customCurve.Location = new System.Drawing.Point(104, 77);
+            this.customCurve.Location = new System.Drawing.Point(139, 95);
+            this.customCurve.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.customCurve.Name = "customCurve";
-            this.customCurve.rectangleArea = new System.Drawing.Rectangle(3, 3, 600, 328);
-            this.customCurve.Size = new System.Drawing.Size(608, 336);
+            this.customCurve.rectangleArea = new System.Drawing.Rectangle(5, 5, 798, 401);
+            this.customCurve.Size = new System.Drawing.Size(810, 413);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
+            this.customCurve.Resize += new System.EventHandler(this.customContolResise);
             // 
             // View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 635);
+            this.ClientSize = new System.Drawing.Size(1085, 782);
             this.Controls.Add(this.customCurve);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);
@@ -320,6 +343,7 @@ namespace NormalDistributionGraph
             this.Controls.Add(this.textBoxStdDev);
             this.Controls.Add(this.textBoxMean);
             this.Controls.Add(this.lblMean);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "View";
             this.Text = "MSO-TrainingApp1";
             this.Load += new System.EventHandler(this.View_Load);
