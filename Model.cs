@@ -154,12 +154,12 @@ namespace NormalDistributionGraph
         public void CreateGraphXCoordinates(Rectangle rectangle, PointF startingPoint)
         {
             GraphXValues.Add(startingPoint.X);
-            float percentage = 0.005f;
+            float percentageOfWidth = 0.005f; // if full width = 100% or 1, then 1 / 200 points equals 0.005 which is the percent increment of the total width for 200 points
             for (int i = 0; i < 199; i++)
             {
-                float nextXValue = rectangle.Width * percentage;
+                float nextXValue = rectangle.Width * percentageOfWidth;
                 GraphXValues.Add(nextXValue);
-                percentage += 0.005f;
+                percentageOfWidth += 0.005f;
             }
 
         }
