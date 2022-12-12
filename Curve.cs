@@ -24,6 +24,7 @@ namespace NormalDistributionGraph
 
           protected override void OnPaint(PaintEventArgs e)
         {
+            
             base.OnPaint(e);
             // Fill the background of the working area of the control in solid black
             Brush graphBackgroundBrush = new SolidBrush(Color.White);
