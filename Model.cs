@@ -154,16 +154,18 @@ namespace NormalDistributionGraph
         public void CreateGraphXCoordinates(Rectangle rectangle, PointF startingPoint)
         {
             GraphXValues.Add(startingPoint.X);
-            float currentValue = startingPoint.X;
-            float increment = (rectangle.Width / XValues.Count); 
+            float percentage = 0.005f;
             for (int i = 0; i < 199; i++)
             {
-                float nextXValue = currentValue + increment;
+                float nextXValue = rectangle.Width * percentage;
                 GraphXValues.Add(nextXValue);
-                currentValue = nextXValue;
+                percentage += 0.005f;
             }
 
-        } 
+        }
+                
+ 
+
         public void CreateGraphYCoordinates(Rectangle rectangle, PointF startingPoint)
         {
             GraphYValues.Add(startingPoint.Y);
