@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
 using Algorithms;
+using BuisnessLogic_and_Data;
 
 namespace NormalDistributionGraph
 {
@@ -21,20 +22,35 @@ namespace NormalDistributionGraph
         public string A2 { get; set; }
         public string B1 { get; set; }
         public string B2 { get; set; }
-      
+
         //Probability Properties 
-        public string A1Probability { get; set; } 
+        public string A1Probability { get; set; }
         public string A2B2Probability { get; set; }
-        public string B1Probability {get; set;}
+        public string B1Probability { get; set; }
+
+        //Curve Properties
+        public Rectangle rectangle
+        {
+            get { return _customCurve.rectangle; }
+            set { _customCurve.rectangle = value; }
+        }
+        public PointF startingPoint
+        {
+            get { return _customCurve.startingPoint; }
+            set { _customCurve.startingPoint = value; }
+        }
 
         //Observer Properties
-        public List<IObserver<ModelUpdate>> _observers; 
+        public List<IObserver<ModelUpdate>> _observers;
+
+        //Reference properties 
+        private readonly CustomCurve _customCurve;
 
         //Constructor
         public Model()
         {
             _observers = new List<IObserver<ModelUpdate>>();
-            
+            _customCurve = new CustomCurve();
         }
 
         //IObserverable methods 
@@ -70,23 +86,30 @@ namespace NormalDistributionGraph
         }
         public PointF[] GenerateCurve()
         {
-            CreateXCoordinates();
-            CreateYCoordinates();
-            CreateGraphXCoordinates(rectangle, startingPoint);
-            CreateGraphYCoordinates(rectangle, startingPoint);
-            GraphAddXandYToPointArray();
-            return GraphXYArray;
+            _customCurve.CreateXCoordinates(mean, stdDev);
+            _customCurve.CreateYCoordinates(mean, stdDev);
+            _customCurve.CreateGraphXCoordinates(rectangle, startingPoint);
+            _customCurve.CreateGraphYCoordinates(rectangle, startingPoint);
+            _customCurve.GraphAddXandYToPointArray();
+            return _customCurve.GraphXYArray;
         }
         public PointF[] GenerateSDLines()
         {
-            CreateSDLinePoints();
-            return GraphSDLines;
+            _customCurve.CreateSDLinePoints();
+            return _customCurve.GraphSDLines;
         }
         public void UpdateProbabilities()
         {
+<<<<<<< Updated upstream
             A1Probability = Probability.CalculateProbabilityPercentage_XLessThanA(A1, mean, stdDev);
             A2B2Probability = Probability.CalculateProbabilityPercentage_ALessThanXLessThanB(A2, B2, mean, stdDev);
             B1Probability = Probability.CalculateProbabilityPercentage_XGreaterThanB(B1, mean, stdDev);
+=======
+<<<<<<< Updated upstream
+            CalculateProbabilityPercentage_XLessThanA();
+            CalculateProbabilityPercentage_ALessThanXLessThanB();
+            CalculateProbabilityPercentage_XGreaterThanB();
+>>>>>>> Stashed changes
             SendMessage(new ModelUpdate(enableProbPanelDistBtn, A1Probability, A2B2Probability, B1Probability));
         }
 
@@ -182,17 +205,20 @@ namespace NormalDistributionGraph
                 GraphXYArray[i] = new PointF(GraphXValues[i], GraphYValues[i]);
             }
         }
+=======
+            A1Probability = Algorithm.CalculateProbabilityPercentage_XLessThanA(A1, mean, stdDev);
+            A2B2Probability = Algorithm.CalculateProbabilityPercentage_ALessThanXLessThanB(A2, B2, mean, stdDev);
+            B1Probability = Algorithm.CalculateProbabilityPercentage_XGreaterThanB(B1, mean, stdDev);
+            SendMessage(new ModelUpdate(enableProbPanelDistBtn, A1Probability, A2B2Probability, B1Probability));
+        }
+>>>>>>> Stashed changes
         public void Reset()
         {
-            XValues = new List<float>();
-            YValues = new List<float>();
-            GraphXValues = new List<float>();
-            GraphYValues = new List<float>();
-            GraphXYArray = new PointF[200];
-            GraphSDLines = new PointF[10];
+            _customCurve.Reset();
         }
 
 
+<<<<<<< Updated upstream
         //Custom Control Methods : Drawing the SD Lines 
         public void CreateSDLinePoints()
         {
@@ -233,6 +259,56 @@ namespace NormalDistributionGraph
 
 
         
+<<<<<<< Updated upstream
       
+=======
+        public float CalculateDefiniteIntegralWithInputNum(float inputNum, float mean, float stdDev)
+        {
+            float zScore = (inputNum - mean) / (stdDev);
+            float top = ((float)SpecialFunctions.Erf((zScore/ (float)Math.Sqrt(2f))));
+            return 0.5f * top;
+        }
+        public float CalculateDefiniteIntegralWithoutInputNum(float boundry)
+        {
+            float top = ((float)SpecialFunctions.Erf((boundry / (float)Math.Sqrt(2f))));
+            return 0.5f * top;
+        }
+        public void CalculateProbabilityPercentage_XLessThanA()
+        {
+            if (A1 == "" || A1 == null) { A1Probability = null; return; }
+            float A1Float = float.Parse(A1);
+            float upper = CalculateDefiniteIntegralWithInputNum(A1Float, mean, stdDev);
+            float lower = CalculateDefiniteIntegralWithoutInputNum(-100f);
+            float result = (upper - lower) * 100f;
+            A1Probability = result.ToString();
+        }
+        public void CalculateProbabilityPercentage_ALessThanXLessThanB()
+        {
+            if (A2 == "" || B2 == "" || A2 == null || B2 == null) { A2B2Probability = null; return; }
+            float A2Float = float.Parse(A2);
+            float B2Float = float.Parse(B2);
+            float upper = CalculateDefiniteIntegralWithInputNum(B2Float, mean, stdDev);
+            float lower = CalculateDefiniteIntegralWithInputNum(A2Float, mean, stdDev);
+            float result = (upper - lower) * 100f;
+            A2B2Probability = result.ToString();
+        }
+        public void CalculateProbabilityPercentage_XGreaterThanB()
+        {
+            if (B1 == "" || B1 == null) { B1Probability = null; return; }
+            float B1Float = float.Parse(B1);
+            float upper = CalculateDefiniteIntegralWithoutInputNum(100f);
+            float lower = CalculateDefiniteIntegralWithInputNum(B1Float, mean, stdDev);
+            float result = (upper - lower) * 100f;
+            B1Probability = result.ToString();
+        }
+=======
+        
+
+
+
+
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
 }
