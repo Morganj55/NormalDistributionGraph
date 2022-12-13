@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Curve.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Curve.Designer.cs">
-      <DependentUpon>Curve.cs</DependentUpon>
-    </Compile>
     <Compile Include="ICurve.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="Model.cs" />
@@ -67,9 +61,6 @@
     <Compile Include="IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Curve.resx">
-      <DependentUpon>Curve.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +90,20 @@
     <PackageReference Include="MathNet.Numerics">
       <Version>5.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+      <Project>{5cd1b5d7-3f48-4852-9652-664cba9a2cd5}</Project>
+      <Name>Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuisnessLogic and Data\BuisnessLogic and Data.csproj">
+      <Project>{a6606ffc-a935-4b19-8ed0-36f2b45368f8}</Project>
+      <Name>BuisnessLogic and Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomControl\CustomControl.csproj">
+      <Project>{dc2dbefe-2231-4b66-b097-2feae0f50748}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
