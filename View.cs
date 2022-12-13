@@ -62,19 +62,19 @@ namespace NormalDistributionGraph
 
         public Rectangle _rectangleArea
         {
-            get { return newCurve1.rectangleArea; }
+            get { return customCurve1.rectangleArea; }
         }
         public PointF _startingPoint
         {
-            get { return newCurve1.startingPoint; }
+            get { return customCurve1.startingPoint; }
         }
         public PointF[] _graphXYArray
         {
-            set { newCurve1.graphXYArray = value; }
+            set { customCurve1.graphXYArray = value; }
         }
         public PointF[] _graphSDLines
         {
-            set { newCurve1.graphSDLines = value; }
+            set { customCurve1.graphSDLines = value; }
         }
 
         public void View_Load(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace NormalDistributionGraph
 
         public void PaintCurve()
         {
-            newCurve1.Invalidate();
+            customCurve1.Invalidate();
         }
 
       
