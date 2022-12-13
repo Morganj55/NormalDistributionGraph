@@ -58,7 +58,7 @@ namespace NormalDistributionGraph
             this.errorProviderA2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.customCurve = new NormalDistributionGraph.Curve();
+            this.customCurve1 = new CustomControl.CustomCurve();
             this.ProbabilityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).BeginInit();
@@ -313,29 +313,24 @@ namespace NormalDistributionGraph
             // 
             this.errorProviderB2.ContainerControl = this;
             // 
-            // customCurve
+            // customCurve1
             // 
-            this.customCurve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customCurve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customCurve.graphSDLines = null;
-            this.customCurve.graphXYArray = null;
-            this.customCurve.Location = new System.Drawing.Point(139, 95);
-            this.customCurve.Margin = new System.Windows.Forms.Padding(5);
-            this.customCurve.Name = "customCurve";
-            this.customCurve.rectangleArea = new System.Drawing.Rectangle(5, 5, 798, 401);
-            this.customCurve.Size = new System.Drawing.Size(810, 413);
-            this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
-            this.customCurve.TabIndex = 25;
-            this.customCurve.Resize += new System.EventHandler(this.customContolResize);
+            this.customCurve1.graphSDLines = null;
+            this.customCurve1.graphXYArray = null;
+            this.customCurve1.Location = new System.Drawing.Point(72, 106);
+            this.customCurve1.Name = "customCurve1";
+            this.customCurve1.rectangleArea = new System.Drawing.Rectangle(3, 3, 958, 381);
+            this.customCurve1.Size = new System.Drawing.Size(964, 387);
+            this.customCurve1.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve1.startingPoint")));
+            this.customCurve1.TabIndex = 25;
+            this.customCurve1.Resize += new System.EventHandler(this.customContolResize);
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 782);
-            this.Controls.Add(this.customCurve);
+            this.Controls.Add(this.customCurve1);
             this.Controls.Add(this.lblValid);
             this.Controls.Add(this.ProbabilityPanel);
             this.Controls.Add(this.btnGenNormDist);
@@ -389,7 +384,7 @@ namespace NormalDistributionGraph
         private System.Windows.Forms.ErrorProvider errorProviderA2;
         private System.Windows.Forms.ErrorProvider errorProviderB1;
         private System.Windows.Forms.ErrorProvider errorProviderB2;
-        private Curve customCurve;
+        private CustomControl.CustomCurve customCurve1;
     }
 }
 
