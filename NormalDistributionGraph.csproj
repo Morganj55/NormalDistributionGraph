@@ -105,6 +105,10 @@
       <Project>{5CD1B5D7-3F48-4852-9652-664CBA9A2CD5}</Project>
       <Name>Algorithms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BuisnessLogic and Data\BuisnessLogic and Data.csproj">
+      <Project>{A6606FFC-A935-4B19-8ED0-36F2B45368F8}</Project>
+      <Name>BuisnessLogic and Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">
       <Project>{DC2DBEFE-2231-4B66-B097-2FEAE0F50748}</Project>
       <Name>CustomControl</Name>
