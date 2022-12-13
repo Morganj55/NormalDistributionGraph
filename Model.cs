@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms;
 using MathNet.Numerics;
 
 namespace NormalDistributionGraph
@@ -83,9 +84,9 @@ namespace NormalDistributionGraph
         }
         public void UpdateProbabilities()
         {
-            CalculateProbabilityPercentage_XLessThanA();
-            CalculateProbabilityPercentage_ALessThanXLessThanB();
-            CalculateProbabilityPercentage_XGreaterThanB();
+           A1Probability = Algorithm.CalculateProbabilityPercentage_XLessThanA(A1, mean, stdDev);
+           A2B2Probability = Algorithm.CalculateProbabilityPercentage_ALessThanXLessThanB(A2, B2, mean, stdDev);
+           B1Probability = Algorithm.CalculateProbabilityPercentage_XGreaterThanB(B1, mean, stdDev);
             SendMessage(new ModelUpdate(enableProbPanelDistBtn, A1Probability, A2B2Probability, B1Probability));
         }
 
