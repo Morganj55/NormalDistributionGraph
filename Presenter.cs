@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using BuisnessLogic_and_Data;
 
 namespace NormalDistributionGraph
 {
@@ -37,9 +38,9 @@ namespace NormalDistributionGraph
         private void ValidatingStats(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (!TextBoxTextIsValid_Stats(clickedTextBox.Text))
+            if (!TextValidation.TextBoxTextIsValid_Stats(clickedTextBox.Text))
             {
-                FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
+                TextValidation.FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
                 UpdateModelInvalidState(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
@@ -48,9 +49,9 @@ namespace NormalDistributionGraph
         private void ValidatedStats(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (TextBoxTextIsValid_Stats(clickedTextBox.Text))
+            if (TextValidation.TextBoxTextIsValid_Stats(clickedTextBox.Text))
             {
-                SetFormattedTextClearError_Stats((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                TextValidation.SetFormattedTextClearError_Stats((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
                 UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
@@ -72,9 +73,9 @@ namespace NormalDistributionGraph
         private void ValidatingProbability(object sender, CancelEventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (!TextBoxTextIsValid_Probability(clickedTextBox.Text))
+            if (!TextValidation.TextBoxTextIsValid_Probability(clickedTextBox.Text))
             {
-                FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
+                TextValidation.FocusAndHighlightTextSetError(clickedTextBox, _view.TextBoxErrorProvider, e);
                 UpdateModelInvalidState(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
             }
@@ -83,9 +84,9 @@ namespace NormalDistributionGraph
         private void ValidatedProbability(object sender, EventArgs e)
         {
             TextBox clickedTextBox = (sender as TextBox);
-            if (TextBoxTextIsValid_Probability(clickedTextBox.Text))
+            if (TextValidation.TextBoxTextIsValid_Probability(clickedTextBox.Text))
             {
-                ValidTextProbability((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
+                TextValidation.ValidTextProbability((clickedTextBox.Text), clickedTextBox, _view.TextBoxErrorProvider);
                 UpdateModelValidState(clickedTextBox);
                 UpdateModelInputNumbers(clickedTextBox);
                 _model.UpdateProbabiltyPanelAndDistributionButton();
