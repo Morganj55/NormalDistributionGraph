@@ -96,7 +96,7 @@ namespace NormalDistributionGraph
             this.ProbabilityPanel.Controls.Add(this.lblA2);
             this.ProbabilityPanel.Controls.Add(this.lblA1);
             this.ProbabilityPanel.Location = new System.Drawing.Point(27, 546);
-            this.ProbabilityPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProbabilityPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ProbabilityPanel.Name = "ProbabilityPanel";
             this.ProbabilityPanel.Size = new System.Drawing.Size(1004, 180);
             this.ProbabilityPanel.TabIndex = 23;
@@ -131,7 +131,7 @@ namespace NormalDistributionGraph
             // textBoxB2
             // 
             this.textBoxB2.Location = new System.Drawing.Point(432, 76);
-            this.textBoxB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxB2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxB2.Name = "textBoxB2";
             this.textBoxB2.Size = new System.Drawing.Size(132, 22);
             this.textBoxB2.TabIndex = 16;
@@ -181,7 +181,7 @@ namespace NormalDistributionGraph
             // textBoxB1
             // 
             this.textBoxB1.Location = new System.Drawing.Point(99, 127);
-            this.textBoxB1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxB1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxB1.Name = "textBoxB1";
             this.textBoxB1.Size = new System.Drawing.Size(132, 22);
             this.textBoxB1.TabIndex = 6;
@@ -191,7 +191,7 @@ namespace NormalDistributionGraph
             // textBoxA2
             // 
             this.textBoxA2.Location = new System.Drawing.Point(99, 78);
-            this.textBoxA2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxA2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxA2.Name = "textBoxA2";
             this.textBoxA2.Size = new System.Drawing.Size(132, 22);
             this.textBoxA2.TabIndex = 5;
@@ -201,7 +201,7 @@ namespace NormalDistributionGraph
             // textBoxA1
             // 
             this.textBoxA1.Location = new System.Drawing.Point(99, 28);
-            this.textBoxA1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxA1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxA1.Name = "textBoxA1";
             this.textBoxA1.Size = new System.Drawing.Size(132, 22);
             this.textBoxA1.TabIndex = 4;
@@ -241,7 +241,7 @@ namespace NormalDistributionGraph
             // btnGenNormDist
             // 
             this.btnGenNormDist.Location = new System.Drawing.Point(691, 36);
-            this.btnGenNormDist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenNormDist.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenNormDist.Name = "btnGenNormDist";
             this.btnGenNormDist.Size = new System.Drawing.Size(375, 28);
             this.btnGenNormDist.TabIndex = 21;
@@ -262,7 +262,7 @@ namespace NormalDistributionGraph
             // textBoxStdDev
             // 
             this.textBoxStdDev.Location = new System.Drawing.Point(457, 37);
-            this.textBoxStdDev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxStdDev.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStdDev.Name = "textBoxStdDev";
             this.textBoxStdDev.Size = new System.Drawing.Size(145, 22);
             this.textBoxStdDev.TabIndex = 20;
@@ -272,7 +272,7 @@ namespace NormalDistributionGraph
             // textBoxMean
             // 
             this.textBoxMean.Location = new System.Drawing.Point(91, 37);
-            this.textBoxMean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMean.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMean.Name = "textBoxMean";
             this.textBoxMean.Size = new System.Drawing.Size(145, 22);
             this.textBoxMean.TabIndex = 19;
@@ -322,13 +322,13 @@ namespace NormalDistributionGraph
             this.customCurve.graphSDLines = null;
             this.customCurve.graphXYArray = null;
             this.customCurve.Location = new System.Drawing.Point(139, 95);
-            this.customCurve.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.customCurve.Margin = new System.Windows.Forms.Padding(5);
             this.customCurve.Name = "customCurve";
             this.customCurve.rectangleArea = new System.Drawing.Rectangle(5, 5, 798, 401);
             this.customCurve.Size = new System.Drawing.Size(810, 413);
             this.customCurve.startingPoint = ((System.Drawing.PointF)(resources.GetObject("customCurve.startingPoint")));
             this.customCurve.TabIndex = 25;
-            this.customCurve.Resize += new System.EventHandler(this.customContolResise);
+            this.customCurve.Resize += new System.EventHandler(this.customContolResize);
             // 
             // View
             // 
@@ -343,7 +343,7 @@ namespace NormalDistributionGraph
             this.Controls.Add(this.textBoxStdDev);
             this.Controls.Add(this.textBoxMean);
             this.Controls.Add(this.lblMean);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "View";
             this.Text = "MSO-TrainingApp1";
             this.Load += new System.EventHandler(this.View_Load);

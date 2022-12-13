@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomControl;
 
 namespace NormalDistributionGraph
 {
@@ -16,10 +17,12 @@ namespace NormalDistributionGraph
         {
             InitializeComponent();
             presenter = new Presenter(this);
+            
         }
 
         //References 
         private readonly Presenter presenter;
+        //private readonly CustomCurve newCurve;
 
         //Properties and Events 
         public event CancelEventHandler ValidatingStatsTextBox;
@@ -59,19 +62,19 @@ namespace NormalDistributionGraph
 
         public Rectangle _rectangleArea
         {
-            get { return customCurve.rectangleArea; }
+            get { return newCurve1.rectangleArea; }
         }
         public PointF _startingPoint
         {
-            get { return customCurve.startingPoint; }
+            get { return newCurve1.startingPoint; }
         }
         public PointF[] _graphXYArray
         {
-            set { customCurve.graphXYArray = value; }
+            set { newCurve1.graphXYArray = value; }
         }
         public PointF[] _graphSDLines
         {
-            set { customCurve.graphSDLines = value; }
+            set { newCurve1.graphSDLines = value; }
         }
 
         public void View_Load(object sender, EventArgs e)
@@ -115,7 +118,7 @@ namespace NormalDistributionGraph
             GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
         }
 
-        private void customContolResise(object sender, EventArgs e)
+        private void customContolResize(object sender, EventArgs e)
         {
             GenerateNormalDistribution?.Invoke(sender, EventArgs.Empty);
             PaintCurve();
@@ -123,7 +126,7 @@ namespace NormalDistributionGraph
 
         public void PaintCurve()
         {
-            customCurve.Invalidate();
+            newCurve1.Invalidate();
         }
 
       
