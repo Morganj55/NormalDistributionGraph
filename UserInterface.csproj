@@ -46,30 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Curve.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Curve.Designer.cs">
-      <DependentUpon>Curve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ICurve.cs" />
-    <Compile Include="IModel.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="ModelUpdate.cs" />
-    <Compile Include="ObserverableUnsubscriber.cs" />
-    <Compile Include="Presenter.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
-    <Compile Include="IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Curve.resx">
-      <DependentUpon>Curve.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,12 +85,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
-      <Project>{5CD1B5D7-3F48-4852-9652-664CBA9A2CD5}</Project>
-      <Name>Algorithms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BuisnessLogic and Data\BuisnessLogic and Data.csproj">
-      <Project>{A6606FFC-A935-4B19-8ED0-36F2B45368F8}</Project>
+      <Project>{a6606ffc-a935-4b19-8ed0-36f2b45368f8}</Project>
       <Name>BuisnessLogic and Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">

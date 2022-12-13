@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomControl;
 
+
 namespace NormalDistributionGraph
 {
     public partial class View : Form, IView
@@ -22,7 +23,6 @@ namespace NormalDistributionGraph
 
         //References 
         private readonly Presenter presenter;
-        //private readonly CustomCurve newCurve;
 
         //Properties and Events 
         public event CancelEventHandler ValidatingStatsTextBox;

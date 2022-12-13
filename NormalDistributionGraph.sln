@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalDistributionGraph", "NormalDistributionGraph.csproj", "{1E2CC9BF-718C-4014-AB7C-16BB05F21CA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface.csproj", "{1E2CC9BF-718C-4014-AB7C-16BB05F21CA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "..\Algorithms\Algorithms.csproj", "{5CD1B5D7-3F48-4852-9652-664CBA9A2CD5}"
 EndProject
