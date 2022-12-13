@@ -315,6 +315,9 @@ namespace NormalDistributionGraph
             // 
             // customCurve1
             // 
+            this.customCurve1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customCurve1.graphSDLines = null;
             this.customCurve1.graphXYArray = null;
             this.customCurve1.Location = new System.Drawing.Point(72, 106);
