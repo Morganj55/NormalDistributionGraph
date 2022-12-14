@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BuisnessLogic_and_Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace NormalDistributionGraph
+namespace UserInterface
 {
     public partial class View : Form, IView
     {
