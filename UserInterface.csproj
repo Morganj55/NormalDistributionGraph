@@ -90,7 +90,7 @@
       <Name>BuisnessLogic and Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">
-      <Project>{DC2DBEFE-2231-4B66-B097-2FEAE0F50748}</Project>
+      <Project>{dc2dbefe-2231-4b66-b097-2feae0f50748}</Project>
       <Name>CustomControl</Name>
     </ProjectReference>
   </ItemGroup>

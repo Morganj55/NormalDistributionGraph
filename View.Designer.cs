@@ -58,7 +58,7 @@ namespace UserInterface
             this.errorProviderA2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderB2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.customCurve1 = new CustomControl.CustomCurve();
+            this.customCurve1 = new CustomControl.CurveUI();
             this.ProbabilityPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderStdDev)).BeginInit();
@@ -387,7 +387,7 @@ namespace UserInterface
         private System.Windows.Forms.ErrorProvider errorProviderA2;
         private System.Windows.Forms.ErrorProvider errorProviderB1;
         private System.Windows.Forms.ErrorProvider errorProviderB2;
-        private CustomControl.CustomCurve customCurve1;
+        private CustomControl.CurveUI customCurve1;
     }
 }
 
