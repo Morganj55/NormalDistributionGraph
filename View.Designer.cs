@@ -1,5 +1,5 @@
 ﻿
-namespace NormalDistributionGraph
+namespace UserInterface
 {
     partial class View
     {
