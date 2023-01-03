@@ -72,18 +72,10 @@ namespace UserInterface
         {
             set { customCurve1.graphSDLines = value; }
         }
-        public List<float> _XValues
-        {
-            set { customCurve1.xValues = value; }
-        }
-        public string mean
-        {
-            set { customCurve1.mean = value; }
-        }
-        public float stdDev
-        {
-            set { customCurve1.stdDev = value; }
-        }
+
+        public List<float> _XValues { set { customCurve1.xValues = value; } }
+        public string mean { set { customCurve1.mean = value; } }
+        public float stdDev { set { customCurve1.stdDev = value; } }
 
         public void View_Load(object sender, EventArgs e)
         {
