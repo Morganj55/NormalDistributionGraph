@@ -1,0 +1,8 @@
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\bin\Debug\CustomControl.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\bin\Debug\CustomControl.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.csproj.AssemblyReference.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.csproj.CoreCompileInputs.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.csproj.GenerateResource.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\CustomControl\obj\Debug\CustomControl.CurveUI.resources

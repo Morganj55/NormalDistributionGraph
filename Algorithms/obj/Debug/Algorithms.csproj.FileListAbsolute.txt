@@ -1,0 +1,11 @@
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\Algorithms.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\Algorithms.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\MathNet.Numerics.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\System.ValueTuple.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\MathNet.Numerics.xml
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\bin\Debug\System.ValueTuple.xml
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\obj\Debug\Algorithms.csproj.AssemblyReference.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\obj\Debug\Algorithms.csproj.CopyComplete
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\obj\Debug\Algorithms.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\Algorithms\obj\Debug\Algorithms.pdb

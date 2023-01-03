@@ -1,0 +1,15 @@
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.AssemblyReference.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\NormalDistributionGraph.exe
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\NormalDistributionGraph.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\bin\Debug\NormalDistributionGraph.exe.config
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

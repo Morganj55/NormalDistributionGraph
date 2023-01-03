@@ -1,0 +1,13 @@
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\BuisnessLogic and Data.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\BuisnessLogic and Data.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\obj\Debug\BuisnessLogic and Data.csproj.AssemblyReference.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\obj\Debug\BuisnessLogic and Data.csproj.CoreCompileInputs.cache
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\obj\Debug\BuisnessLogic and Data.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\obj\Debug\BuisnessLogic and Data.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\Algorithms.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\MathNet.Numerics.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\System.ValueTuple.dll
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\Algorithms.pdb
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\MathNet.Numerics.xml
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\bin\Debug\System.ValueTuple.xml
+C:\Users\johns\Documents\Training projects\WinFormApp\ShimadzuProjects\ShimadzuTrainingApp\MSONormDistGraph\BuisnessLogic and Data\obj\Debug\BuisnessLogic and Data.csproj.CopyComplete

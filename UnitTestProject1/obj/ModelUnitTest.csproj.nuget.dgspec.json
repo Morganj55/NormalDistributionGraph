@@ -1,0 +1,187 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\ModelUnitTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj",
+        "projectName": "Algorithms",
+        "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj",
+        "projectName": "BuisnessLogic and Data",
+        "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\CustomControl\\CustomControl.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\CustomControl\\CustomControl.csproj",
+        "projectName": "CustomControl",
+        "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\CustomControl\\CustomControl.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\NormalDistributionGraph.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\NormalDistributionGraph.csproj",
+        "projectName": "NormalDistributionGraph",
+        "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\NormalDistributionGraph.csproj",
+        "packagesPath": "C:\\Users\\johns\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\johns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj"
+              },
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj"
+              },
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\CustomControl\\CustomControl.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\CustomControl\\CustomControl.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "MathNet.Numerics": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\ModelUnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\ModelUnitTest.csproj",
+        "projectName": "ModelUnitTest",
+        "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\ModelUnitTest.csproj",
+        "packagesPath": "C:\\Users\\johns\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\johns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\Algorithms\\Algorithms.csproj"
+              },
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\BuisnessLogic and Data\\BuisnessLogic and Data.csproj"
+              },
+              "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\NormalDistributionGraph.csproj": {
+                "projectPath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\NormalDistributionGraph\\NormalDistributionGraph.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "MathNet.Numerics": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

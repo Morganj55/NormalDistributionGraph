@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "R4sQszYp3qcWDNod6YJu01cSI7SRyoXooAxyEEHtFEiwhQMJV9Aqpkbo7n674D/5ZH8UMpBonbnSCWLTB7BHyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\johns\\Documents\\Training projects\\WinFormApp\\ShimadzuProjects\\ShimadzuTrainingApp\\MSONormDistGraph\\UnitTestProject1\\UnitTests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\johns\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\johns\\.nuget\\packages\\mstest.testadapter\\2.1.2\\mstest.testadapter.2.1.2.nupkg.sha512",
+    "C:\\Users\\johns\\.nuget\\packages\\mstest.testframework\\2.1.2\\mstest.testframework.2.1.2.nupkg.sha512",
+    "C:\\Users\\johns\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
